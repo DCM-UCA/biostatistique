@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 6 Clustering | Statistiques appliquées aux sciences du vivant et de l’environnement</title>
+  <meta name="description" content="Ce livre est à destination des étudiants qui veulent approfondir leur connaissance en statistiques appliquées aux sciences du vivant." />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 6 Clustering | Statistiques appliquées aux sciences du vivant et de l’environnement" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Ce livre est à destination des étudiants qui veulent approfondir leur connaissance en statistiques appliquées aux sciences du vivant." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 6 Clustering | Statistiques appliquées aux sciences du vivant et de l’environnement" />
+  
+  <meta name="twitter:description" content="Ce livre est à destination des étudiants qui veulent approfondir leur connaissance en statistiques appliquées aux sciences du vivant." />
+  
+
+<meta name="author" content="David Martin Carminati" />
+
+
+<meta name="date" content="2026-09-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tests-statistiques-corrélations.html"/>
+<link rel="next" href="analyse-en-composantes-principales.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistiques appliquées aux sciences du vivant</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html"><i class="fa fa-check"></i><b>1</b> Introduction au langage de programmation <code>R</code></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#rstudio-et-ide."><i class="fa fa-check"></i><b>1.1</b> Rstudio et IDE.</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-pr%C3%A9-requis"><i class="fa fa-check"></i><b>1.2</b> Les pré-requis</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-objects"><i class="fa fa-check"></i><b>1.2.1</b> Les objects</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-fonctions"><i class="fa fa-check"></i><b>1.2.2</b> Les fonctions</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-data-frames"><i class="fa fa-check"></i><b>1.2.3</b> Les data-frames</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-boucles"><i class="fa fa-check"></i><b>1.3</b> Les boucles</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-fonctions-version-interm%C3%A9diaire"><i class="fa fa-check"></i><b>1.4</b> Les fonctions (version intermédiaire)</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html"><i class="fa fa-check"></i><b>2</b> Test statistique (<span class="math inline">\(\chi^2\)</span>)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#observationexp%C3%A9riencecausalit%C3%A9-quelques-mots-de-vocabulaire"><i class="fa fa-check"></i><b>2.1</b> Observation/Expérience/Causalité (quelques mots de vocabulaire)</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#%C3%A9chantillonspopulations"><i class="fa fa-check"></i><b>2.1.1</b> Échantillons/populations</a></li>
+<li class="chapter" data-level="2.1.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#donn%C3%A9esindividusvariables"><i class="fa fa-check"></i><b>2.1.2</b> Données/Individus/Variables</a></li>
+<li class="chapter" data-level="2.1.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#m%C3%A9thodologie-danalyse"><i class="fa fa-check"></i><b>2.1.3</b> Méthodologie d’analyse</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#test-statistique-avec-2-variables-qualitatives."><i class="fa fa-check"></i><b>2.2</b> Test statistique avec 2 variables qualitatives.</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#statistiques-descriptives-et-visualisations"><i class="fa fa-check"></i><b>2.2.1</b> Statistiques descriptives et visualisations</a></li>
+<li class="chapter" data-level="2.2.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#explication-des-tests-statistiques"><i class="fa fa-check"></i><b>2.2.2</b> Explication des Tests Statistiques</a></li>
+<li class="chapter" data-level="2.2.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#test-statistique-pour-variables-qualitatives-chi2"><i class="fa fa-check"></i><b>2.2.3</b> Test Statistique pour variables qualitatives (<span class="math inline">\(\chi^2\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#r%C3%A9visions"><i class="fa fa-check"></i><b>2.3</b> Révisions</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#qcm"><i class="fa fa-check"></i><b>2.3.1</b> QCM</a></li>
+<li class="chapter" data-level="2.3.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#questions-ouvertes-d%C3%A9finitions"><i class="fa fa-check"></i><b>2.3.2</b> Questions ouvertes (définitions)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#probl%C3%A8me"><i class="fa fa-check"></i><b>2.3.3</b> Problème</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#travaux-pratiques"><i class="fa fa-check"></i><b>2.4</b> Travaux Pratiques</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#exercice-1-pokemons."><i class="fa fa-check"></i><b>2.4.1</b> Exercice 1 : Pokemons.</a></li>
+<li class="chapter" data-level="2.4.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#exercice-2-activit%C3%A9-physique."><i class="fa fa-check"></i><b>2.4.2</b> Exercice 2 : Activité physique.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html"><i class="fa fa-check"></i><b>3</b> Tests statistiques (t. test et t. wilcoxon)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#statistiques-descriptives-et-visualisations-1"><i class="fa fa-check"></i><b>3.1</b> Statistiques descriptives et visualisations</a></li>
+<li class="chapter" data-level="3.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-statistique-param%C3%A9trique-et-non-param%C3%A9trique"><i class="fa fa-check"></i><b>3.2</b> Test statistique paramétrique et non paramétrique</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#g%C3%A9n%C3%A9ralit%C3%A9s-1"><i class="fa fa-check"></i><b>3.2.1</b> Généralités</a></li>
+<li class="chapter" data-level="3.2.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#pr%C3%A9requis-pour-le-choix-du-test"><i class="fa fa-check"></i><b>3.2.2</b> Prérequis pour le choix du test</a></li>
+<li class="chapter" data-level="3.2.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-param%C3%A9trique-test-de-student"><i class="fa fa-check"></i><b>3.2.3</b> Test paramétrique (test de Student)</a></li>
+<li class="chapter" data-level="3.2.4" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-non-param%C3%A9trique-test-de-wilcoxon-mann-whitney"><i class="fa fa-check"></i><b>3.2.4</b> Test non paramétrique (test de Wilcoxon-Mann-Whitney)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#r%C3%A9visions-1"><i class="fa fa-check"></i><b>3.3</b> Révisions</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#rappel"><i class="fa fa-check"></i><b>3.3.1</b> Rappel</a></li>
+<li class="chapter" data-level="3.3.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#qcm-1"><i class="fa fa-check"></i><b>3.3.2</b> QCM</a></li>
+<li class="chapter" data-level="3.3.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#questions-ouvertes-d%C3%A9finitions-1"><i class="fa fa-check"></i><b>3.3.3</b> Questions ouvertes (définitions)</a></li>
+<li class="chapter" data-level="3.3.4" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#exercices-1"><i class="fa fa-check"></i><b>3.3.4</b> Exercices</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html"><i class="fa fa-check"></i><b>4</b> Tests statistiques (ANOVA et Kruskal Wallis)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#tests-statistiques-pour-plusieurs-groupes"><i class="fa fa-check"></i><b>4.1</b> Tests statistiques pour plusieurs groupes</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#test-non-param%C3%A9trique-kruskall-wallis"><i class="fa fa-check"></i><b>4.1.1</b> Test non paramétrique (<strong>Kruskall-Wallis</strong>)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#test-param%C3%A9trique-anova"><i class="fa fa-check"></i><b>4.1.2</b> Test paramétrique (<strong>ANOVA</strong>)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#biais-dinterpr%C3%A9tation-li%C3%A9s-%C3%A0-la-multiplicit%C3%A9-des-tests"><i class="fa fa-check"></i><b>4.2</b> Biais d’interprétation liés à la multiplicité des tests</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#th%C3%A9orie-et-demonstration"><i class="fa fa-check"></i><b>4.2.1</b> Théorie et demonstration</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#correction-de-la-p-value-correction-de-bonferroni"><i class="fa fa-check"></i><b>4.2.2</b> Correction de la <span class="math inline">\(p\)</span> value : correction de Bonferroni</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#r%C3%A9visions-2"><i class="fa fa-check"></i><b>4.3</b> Révisions</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#qcm-2"><i class="fa fa-check"></i><b>4.3.1</b> QCM</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#questions-ouvertes-d%C3%A9finitions-2"><i class="fa fa-check"></i><b>4.3.2</b> Questions ouvertes (définitions)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#probl%C3%A8me-1"><i class="fa fa-check"></i><b>4.3.3</b> Problème</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#travaux-pratiques-1"><i class="fa fa-check"></i><b>4.4</b> Travaux pratiques</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#statistiques-descriptives-du-metabolisme-du-fer"><i class="fa fa-check"></i><b>4.4.1</b> Statistiques descriptives du metabolisme du fer</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#tests-statistiques"><i class="fa fa-check"></i><b>4.4.2</b> Tests statistiques</a></li>
+<li class="chapter" data-level="4.4.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#modelisation-%C3%A0-2-facteurs"><i class="fa fa-check"></i><b>4.4.3</b> Modelisation à 2 facteurs</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html"><i class="fa fa-check"></i><b>5</b> Tests statistiques (Corrélations)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#test-dind%C3%A9pendance-entre-2-variables-quantitatives."><i class="fa fa-check"></i><b>5.1</b> Test d’indépendance entre 2 variables <strong>quantitatives</strong>.</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#g%C3%A9n%C3%A9ralit%C3%A9s-2"><i class="fa fa-check"></i><b>5.1.1</b> Généralités</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#conditions"><i class="fa fa-check"></i><b>5.1.2</b> Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#param%C3%A8tres-des-tests-de-correlation-exemple-avec-la-m%C3%A9thode-de-pearson"><i class="fa fa-check"></i><b>5.2</b> Paramètres des tests de correlation : Exemple avec la méthode de Pearson</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#premier-param%C3%A8tre-alpha-coefficient-lin%C3%A9aire"><i class="fa fa-check"></i><b>5.2.1</b> Premier paramètre : <span class="math inline">\(\alpha\)</span>, coefficient linéaire</a></li>
+<li class="chapter" data-level="5.2.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#second-param%C3%A8tre-r"><i class="fa fa-check"></i><b>5.2.2</b> Second paramètre : <span class="math inline">\(r\)</span></a></li>
+<li class="chapter" data-level="5.2.3" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#troisi%C3%A8me-param%C3%A8tre-r2"><i class="fa fa-check"></i><b>5.2.3</b> Troisième paramètre : <span class="math inline">\(r^2\)</span></a></li>
+<li class="chapter" data-level="5.2.4" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#quatri%C3%A8me-param%C3%A8tre-p-value"><i class="fa fa-check"></i><b>5.2.4</b> Quatrième paramètre : <span class="math inline">\(p\)</span> value</a></li>
+<li class="chapter" data-level="5.2.5" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#code-r"><i class="fa fa-check"></i><b>5.2.5</b> Code R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#test-de-spearman"><i class="fa fa-check"></i><b>5.3</b> Test de Spearman</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>6</b> Clustering</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="clustering.html"><a href="clustering.html#g%C3%A9n%C3%A9ralit%C3%A9s-3"><i class="fa fa-check"></i><b>6.1</b> Généralités</a></li>
+<li class="chapter" data-level="6.2" data-path="clustering.html"><a href="clustering.html#k-means-ou-algorithme-des-centres-mobiles-en-fran%C3%A7ais"><i class="fa fa-check"></i><b>6.2</b> K-means (ou algorithme des centres mobiles en français)</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="clustering.html"><a href="clustering.html#principe"><i class="fa fa-check"></i><b>6.2.1</b> Principe</a></li>
+<li class="chapter" data-level="6.2.2" data-path="clustering.html"><a href="clustering.html#algorithme-du-k-means-appartenance-%C3%A0-une-classe-pour-chaque-individu"><i class="fa fa-check"></i><b>6.2.2</b> Algorithme du k-means (appartenance à une classe pour chaque individu)</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="clustering.html"><a href="clustering.html#classification-hi%C3%A9rarchique-ascendante"><i class="fa fa-check"></i><b>6.3</b> Classification Hiérarchique Ascendante</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="clustering.html"><a href="clustering.html#mesure-de-distance-ou-dissimilarit%C3%A9"><i class="fa fa-check"></i><b>6.3.1</b> Mesure de distance ou dissimilarité</a></li>
+<li class="chapter" data-level="6.3.2" data-path="clustering.html"><a href="clustering.html#mesure-dagr%C3%A9gation"><i class="fa fa-check"></i><b>6.3.2</b> Mesure d’agrégation</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="clustering.html"><a href="clustering.html#d%C3%A9finir-le-nombre-de-classes-optimal"><i class="fa fa-check"></i><b>6.4</b> Définir le nombre de classes optimal ?</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="clustering.html"><a href="clustering.html#premi%C3%A8re-approche-variance-totale-et-r%C3%A8gle-du-coude"><i class="fa fa-check"></i><b>6.4.1</b> Première approche : Variance totale et règle du coude</a></li>
+<li class="chapter" data-level="6.4.2" data-path="clustering.html"><a href="clustering.html#seconde-approche-coefficient-de-silhouette-ou-calcul-des-plus-proches-voisins."><i class="fa fa-check"></i><b>6.4.2</b> Seconde approche : coefficient de Silhouette (ou calcul des plus proches voisins).</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="clustering.html"><a href="clustering.html#travaux-dirig%C3%A9s"><i class="fa fa-check"></i><b>6.5</b> Travaux dirigés</a></li>
+<li class="chapter" data-level="6.6" data-path="clustering.html"><a href="clustering.html#travaux-pratiques-2"><i class="fa fa-check"></i><b>6.6</b> Travaux pratiques</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="clustering.html"><a href="clustering.html#cr%C3%A9ation-de-votre-propre-algorithme-kmeans-1h."><i class="fa fa-check"></i><b>6.6.1</b> Création de votre propre algorithme kmeans (1h).</a></li>
+<li class="chapter" data-level="6.6.2" data-path="clustering.html"><a href="clustering.html#efficacit%C3%A9-et-comparaison-de-lalgorithme-30-minutes."><i class="fa fa-check"></i><b>6.6.2</b> Efficacité et comparaison de l’algorithme (30 minutes).</a></li>
+<li class="chapter" data-level="6.6.3" data-path="clustering.html"><a href="clustering.html#clustering-1h30."><i class="fa fa-check"></i><b>6.6.3</b> Clustering (1h30).</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html"><i class="fa fa-check"></i><b>7</b> Analyse en Composantes Principales</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#g%C3%A9n%C3%A9ralit%C3%A9s-4"><i class="fa fa-check"></i><b>7.1</b> Généralités</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#packages-r-factominer"><i class="fa fa-check"></i><b>7.1.1</b> Packages R : <code>FactoMineR</code></a></li>
+<li class="chapter" data-level="7.1.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#normalisation-des-individus-pr%C3%A9-requis"><i class="fa fa-check"></i><b>7.1.2</b> Normalisation des individus : pré-requis</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#r%C3%A9aliser-la-pca-sur-r."><i class="fa fa-check"></i><b>7.2</b> Réaliser la PCA sur R.</a></li>
+<li class="chapter" data-level="7.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-de-lacp"><i class="fa fa-check"></i><b>7.3</b> Interprétation de l’ACP</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#choix-du-nombre-daxes"><i class="fa fa-check"></i><b>7.3.1</b> Choix du nombre d’axes</a></li>
+<li class="chapter" data-level="7.3.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#cercle-des-corr%C3%A9lations-graphique-des-variables"><i class="fa fa-check"></i><b>7.3.2</b> Cercle des corrélations (graphique des variables)</a></li>
+<li class="chapter" data-level="7.3.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#qualit%C3%A9-de-repr%C3%A9sentation-cos2-et-contribution-des-variables"><i class="fa fa-check"></i><b>7.3.3</b> Qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et contribution des variables</a></li>
+<li class="chapter" data-level="7.3.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes"><i class="fa fa-check"></i><b>7.3.4</b> Interprétation des axes</a></li>
+<li class="chapter" data-level="7.3.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#graphique-des-individus"><i class="fa fa-check"></i><b>7.3.5</b> Graphique des individus</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-dirig%C3%A9s-1"><i class="fa fa-check"></i><b>7.4</b> Travaux dirigés</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9sentation-du-projet-des-donn%C3%A9es"><i class="fa fa-check"></i><b>7.4.1</b> Présentation du projet &amp; des données</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-pratiques-3"><i class="fa fa-check"></i><b>7.5</b> Travaux pratiques</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire"><i class="fa fa-check"></i><b>7.5.1</b> Préparation des données (obligatoire)</a></li>
+<li class="chapter" data-level="7.5.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales-obligatoire"><i class="fa fa-check"></i><b>7.5.2</b> Analyse en composantes principales (obligatoire)</a></li>
+<li class="chapter" data-level="7.5.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes-obligatoire"><i class="fa fa-check"></i><b>7.5.3</b> Interprétation des axes (obligatoire)</a></li>
+<li class="chapter" data-level="7.5.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-individus-obligatoire"><i class="fa fa-check"></i><b>7.5.4</b> Interprétation des individus (obligatoire)</a></li>
+<li class="chapter" data-level="7.5.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#validit%C3%A9-de-linterpr%C3%A9tation-bonus-version-expert"><i class="fa fa-check"></i><b>7.5.5</b> Validité de l’interprétation (bonus, version expert)</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistiques appliquées aux sciences du vivant et de l’environnement</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="clustering" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapitre 6</span> Clustering<a href="clustering.html#clustering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>L’objectif de ce chapitre est de comprendre les outils qui permettent de trouver des patterns d’individus via l’expression de leurs variables.</p>
+<blockquote>
+<p>Ici, nous avons simulé 30 individus avec une moyenne de 0 pour la variable ASAT et la variable ALAT, alors qu’un autre groupe de 30 individus possède une moyenne de 4 au ASAT et de 2 au ALAT. Pour rappel, une augmentation de ces deux transaminases au niveau du compartiment sanguin reflète des lésions hépatiques.</p>
+</blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>Que peut-on dire du graphique ci dessous ?</li>
+</ol>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="clustering.html#cb150-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb150-2"><a href="clustering.html#cb150-2" tabindex="-1"></a></span>
+<span id="cb150-3"><a href="clustering.html#cb150-3" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ASAT =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>), <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">4</span>, <span class="dv">1</span>)),</span>
+<span id="cb150-4"><a href="clustering.html#cb150-4" tabindex="-1"></a>                <span class="at">ALAT =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>), <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">2</span>, <span class="dv">1</span>)))</span>
+<span id="cb150-5"><a href="clustering.html#cb150-5" tabindex="-1"></a></span>
+<span id="cb150-6"><a href="clustering.html#cb150-6" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;firebrick&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-82-1.png" alt="" width="672" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Que pouvons-nous remarquer ? Comment synthétiser l’information de notre population ?</li>
+</ol>
+<hr />
+<div id="généralités-3" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Généralités<a href="clustering.html#g%C3%A9n%C3%A9ralit%C3%A9s-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Définition des termes :</p>
+<ul>
+<li><p>Classification : Regrouper des individus en groupes ou classes d’individus proches.</p></li>
+<li><p>Non supervisée : dont on ne connait pas la réalité, on n’a pas d’information à priori.</p></li>
+</ul>
+<p>Autrement dit, la <strong>classification non supervisée</strong> (ou <strong>clustering</strong>) est la recherche d’une partition ou d’une répartition des individus en classes homogènes, de sorte à ce qu’elles soient les plus distinctes possibles.</p>
+<p>Dans ce contexte, nous souhaitons estimer :</p>
+<ul>
+<li><p>L’appartenance à une classe pour chaque individu.</p></li>
+<li><p>Le nombre de classes optimal.</p></li>
+</ul>
+<p>Dans ce chapitre, nous verrons 2 algorithmes qui permettent de définir la classe des individus : la classification <code>k-means</code> et la Classification Hiérarchique Ascendante (<code>HAC</code> en anglais).</p>
+<hr />
+</div>
+<div id="k-means-ou-algorithme-des-centres-mobiles-en-français" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> K-means (ou algorithme des centres mobiles en français)<a href="clustering.html#k-means-ou-algorithme-des-centres-mobiles-en-fran%C3%A7ais" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="principe" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Principe<a href="clustering.html#principe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La finalité de l’algorithme est de nous donner l’appartenance des individus à <span class="math inline">\(G\)</span> groupes. <span class="math inline">\(G\)</span> est le nombre de groupe que l’on pourrait attendre.</p>
+<p>Dans un cas, nous devons faire l’hypothèse que la population peut se classer selon <span class="math inline">\(G\)</span> patterns mais dans d’autres cas, nous ne savons quelle nombre de groupes choisir.</p>
+<p>L’algorithme doit rendre (outputs) <span class="math inline">\(G\)</span> centres de gravité (coordonnée <span class="math inline">\(x,y,...,z\)</span> du centre d’un groupe).</p>
+<p>Enfin, pour chaque individu, on associe le centre le plus proche, ce qui détermine l’appartenance de chaque individu à un groupe et donc, in fine, les groupes.</p>
+</div>
+<div id="algorithme-du-k-means-appartenance-à-une-classe-pour-chaque-individu" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Algorithme du k-means (appartenance à une classe pour chaque individu)<a href="clustering.html#algorithme-du-k-means-appartenance-%C3%A0-une-classe-pour-chaque-individu" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>L’algorithme du k-means se base sur plusieurs étapes : Vous pouvez retrouver une visualisation de comment l’algorithme fonctionne à la fin de la page <a href="https://rpubs.com/hasiegler/926806"><strong>html suivante</strong></a>.</p>
+<ul>
+<li>Première étape (<strong>INITIALISATION</strong>): on prend au hazard un nombre de points égal au nombre de groupes que nous cherchons (ici <span class="math inline">\(G = 2\)</span>). Nous allons prendre les points 24 et 4 (représentés en bleu et jaune sur le graphique).</li>
+</ul>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="clustering.html#cb151-1" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;firebrick&quot;</span>)</span>
+<span id="cb151-2"><a href="clustering.html#cb151-2" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x=</span>X[<span class="dv">24</span>,<span class="dv">1</span>], <span class="at">y=</span>X[<span class="dv">24</span>,<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb151-3"><a href="clustering.html#cb151-3" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x=</span>X[<span class="dv">4</span>,<span class="dv">1</span>], <span class="at">y=</span>X[<span class="dv">4</span>,<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-83-1.png" alt="" width="672" /></p>
+<ul>
+<li>Seconde étape (<strong>ASSIGNATION</strong>) : chaque point sera associé à l’un des points initiaux (bleu ou jaune) en fonction de leur distance par rapport à ce dernier.</li>
+</ul>
+<blockquote>
+<p>Pour rappel, ici nous utiliserons la distance euclidienne dont la formule pour deux variable <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> est <span class="math inline">\(d(M_1, M_2) = \sum{\sqrt{(X_1-X_2)^2+(Y_1-Y_2)^2}}\)</span> où <span class="math inline">\(M_i\)</span> correspond aux individus.</p>
+</blockquote>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="clustering.html#cb152-1" tabindex="-1"></a><span class="do">## ASSIGNATION</span></span>
+<span id="cb152-2"><a href="clustering.html#cb152-2" tabindex="-1"></a>d_n_blue <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(X[<span class="dv">24</span>,],X)))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># Distance de l&#39;ensemble des points au point bleu.</span></span>
+<span id="cb152-3"><a href="clustering.html#cb152-3" tabindex="-1"></a>d_n_gold <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(X[<span class="dv">4</span>,],X)))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># Distance de l&#39;ensemble des points au point jaune.</span></span>
+<span id="cb152-4"><a href="clustering.html#cb152-4" tabindex="-1"></a></span>
+<span id="cb152-5"><a href="clustering.html#cb152-5" tabindex="-1"></a>cluster <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">cbind</span>(d_n_blue, d_n_gold),<span class="dv">1</span>,which.min) <span class="co"># phase d&#39;assignation.</span></span>
+<span id="cb152-6"><a href="clustering.html#cb152-6" tabindex="-1"></a>cluster_col <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">factor</span>(cluster, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="st">&quot;cornflowerblue&quot;</span>, <span class="st">&quot;gold&quot;</span>)))</span>
+<span id="cb152-7"><a href="clustering.html#cb152-7" tabindex="-1"></a></span>
+<span id="cb152-8"><a href="clustering.html#cb152-8" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab =</span> <span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;ALAT&quot;</span>, <span class="at">pch =</span> <span class="dv">1</span>, <span class="at">col =</span> cluster_col, <span class="at">main =</span> <span class="st">&quot;Distances des points par rapport aux points initiaux&quot;</span>)</span>
+<span id="cb152-9"><a href="clustering.html#cb152-9" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x=</span>X[<span class="dv">24</span>,<span class="dv">1</span>], <span class="at">y=</span>X[<span class="dv">24</span>,<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb152-10"><a href="clustering.html#cb152-10" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x=</span>X[<span class="dv">4</span>,<span class="dv">1</span>], <span class="at">y=</span>X[<span class="dv">4</span>,<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-84-1.png" alt="" width="672" /></p>
+<p>Dans ce graphique, les points pleins sont les individus sélectionnés lors de l’étape d’<strong>INITIALISATION</strong>, alors que les points vides sont les autres individus du jeu de données.</p>
+<p>La couleur des points vides est déterminée en fonction de leur distance aux points pleins. Si l’individu se retrouve plus proche du point bleu alors il sera assigné au groupe bleu, et inversement pour les points plus proches du point jaune.</p>
+<ul>
+<li>Troisième étape (<strong>NOUVEAUX CENTROÏDES</strong>) : Dans cette troisième étape il faut recalculer le centroïde de chaque groupe (bleu et jaune), c’est-à-dire les centres de gravité du nuage de points bleus et du nuage de points jaunes.</li>
+</ul>
+<p>Ce seront nos nouveaux points de départ pour recommencer la phase d’<strong>ASSIGNATION</strong>.</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="clustering.html#cb153-1" tabindex="-1"></a><span class="do">## NOUVEAUX CENTROÏDES</span></span>
+<span id="cb153-2"><a href="clustering.html#cb153-2" tabindex="-1"></a>centroide_blue <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(X[<span class="fu">which</span>(cluster<span class="sc">==</span><span class="dv">1</span>),])</span>
+<span id="cb153-3"><a href="clustering.html#cb153-3" tabindex="-1"></a>centroide_jaune <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(X[<span class="fu">which</span>(cluster<span class="sc">==</span><span class="dv">2</span>),])</span>
+<span id="cb153-4"><a href="clustering.html#cb153-4" tabindex="-1"></a></span>
+<span id="cb153-5"><a href="clustering.html#cb153-5" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;firebrick&quot;</span>)</span>
+<span id="cb153-6"><a href="clustering.html#cb153-6" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x=</span>X[<span class="dv">24</span>,<span class="dv">1</span>], <span class="at">y=</span>X[<span class="dv">24</span>,<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb153-7"><a href="clustering.html#cb153-7" tabindex="-1"></a><span class="fu">points</span>(<span class="at">x=</span>X[<span class="dv">4</span>,<span class="dv">1</span>], <span class="at">y=</span>X[<span class="dv">4</span>,<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span>
+<span id="cb153-8"><a href="clustering.html#cb153-8" tabindex="-1"></a><span class="fu">points</span>(centroide_blue[<span class="dv">1</span>], centroide_blue[<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">15</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb153-9"><a href="clustering.html#cb153-9" tabindex="-1"></a><span class="fu">points</span>(centroide_jaune[<span class="dv">1</span>], centroide_jaune[<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">15</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span>
+<span id="cb153-10"><a href="clustering.html#cb153-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;1ere itération&quot;</span>, <span class="st">&quot;2nd itération&quot;</span>), <span class="at">bty=</span><span class="st">&quot;n&quot;</span>, <span class="at">pch=</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">15</span>), <span class="at">title =</span> <span class="st">&quot;Centres de gravité (nuage de points)&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-85-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p>Noter que les nouveaux centres de gravité ne sont plus associés à des individus en particulier.</p>
+</blockquote>
+<ul>
+<li>Boucler (itérer) les deux dernières étapes (<strong>ASSIGNATION</strong> + <strong>NOUVEAUX CENTROÏDES</strong>) pour converger vers des groupes homogènes.</li>
+</ul>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="clustering.html#cb154-1" tabindex="-1"></a>d_n_blue <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(centroide_blue,X)))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># Distance de l&#39;ensemble des points au carré bleu.</span></span>
+<span id="cb154-2"><a href="clustering.html#cb154-2" tabindex="-1"></a>d_n_gold <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(centroide_jaune,X)))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># Distance de l&#39;ensemble des points au carré jaune.</span></span>
+<span id="cb154-3"><a href="clustering.html#cb154-3" tabindex="-1"></a></span>
+<span id="cb154-4"><a href="clustering.html#cb154-4" tabindex="-1"></a>cluster <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">cbind</span>(d_n_blue, d_n_gold),<span class="dv">1</span>,which.min) <span class="co"># phase d&#39;assignation.</span></span>
+<span id="cb154-5"><a href="clustering.html#cb154-5" tabindex="-1"></a>cluster_col <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">factor</span>(cluster, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="st">&quot;cornflowerblue&quot;</span>, <span class="st">&quot;gold&quot;</span>)))</span>
+<span id="cb154-6"><a href="clustering.html#cb154-6" tabindex="-1"></a></span>
+<span id="cb154-7"><a href="clustering.html#cb154-7" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">nrow=</span><span class="dv">1</span>))</span>
+<span id="cb154-8"><a href="clustering.html#cb154-8" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">1</span>, <span class="at">col=</span>cluster_col, <span class="at">main =</span> <span class="st">&quot;ASSIGNATION&quot;</span>)</span>
+<span id="cb154-9"><a href="clustering.html#cb154-9" tabindex="-1"></a><span class="fu">points</span>(centroide_blue[<span class="dv">1</span>], centroide_blue[<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">15</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb154-10"><a href="clustering.html#cb154-10" tabindex="-1"></a><span class="fu">points</span>(centroide_jaune[<span class="dv">1</span>], centroide_jaune[<span class="dv">2</span>], <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">15</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span>
+<span id="cb154-11"><a href="clustering.html#cb154-11" tabindex="-1"></a></span>
+<span id="cb154-12"><a href="clustering.html#cb154-12" tabindex="-1"></a><span class="do">## NOUVEAUX CENTROÏDES</span></span>
+<span id="cb154-13"><a href="clustering.html#cb154-13" tabindex="-1"></a>centroide_blue_2 <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(X[<span class="fu">which</span>(cluster<span class="sc">==</span><span class="dv">1</span>),])</span>
+<span id="cb154-14"><a href="clustering.html#cb154-14" tabindex="-1"></a>centroide_jaune_2 <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(X[<span class="fu">which</span>(cluster<span class="sc">==</span><span class="dv">2</span>),])</span>
+<span id="cb154-15"><a href="clustering.html#cb154-15" tabindex="-1"></a></span>
+<span id="cb154-16"><a href="clustering.html#cb154-16" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">1</span>, <span class="at">col=</span><span class="st">&quot;firebrick&quot;</span>, <span class="at">main =</span> <span class="st">&quot;NOUVEAUX CENTROÏDES&quot;</span>)</span>
+<span id="cb154-17"><a href="clustering.html#cb154-17" tabindex="-1"></a><span class="fu">points</span>(centroide_blue[<span class="dv">1</span>], centroide_blue[<span class="dv">2</span>],<span class="at">pch=</span><span class="dv">15</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb154-18"><a href="clustering.html#cb154-18" tabindex="-1"></a><span class="fu">points</span>(centroide_jaune[<span class="dv">1</span>], centroide_jaune[<span class="dv">2</span>],  <span class="at">pch=</span><span class="dv">15</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span>
+<span id="cb154-19"><a href="clustering.html#cb154-19" tabindex="-1"></a><span class="fu">points</span>(centroide_blue_2[<span class="dv">1</span>], centroide_blue_2[<span class="dv">2</span>],<span class="at">pch=</span><span class="dv">17</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb154-20"><a href="clustering.html#cb154-20" tabindex="-1"></a><span class="fu">points</span>(centroide_jaune_2[<span class="dv">1</span>], centroide_jaune_2[<span class="dv">2</span>], <span class="at">pch=</span><span class="dv">17</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span>
+<span id="cb154-21"><a href="clustering.html#cb154-21" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;2nd itération&quot;</span>, <span class="st">&quot;3eme itération&quot;</span>), <span class="at">bty=</span><span class="st">&quot;n&quot;</span>, <span class="at">pch=</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">17</span>))</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-86-1.png" alt="" width="768" style="display: block; margin: auto;" /></p>
+<p>À la fin, il faut faire une dernière étape d’<strong>ASSIGNATION</strong> pour définir la classe des individus où les triangles sont les centroïdes respectifs des deux groupes.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="clustering.html#cb155-1" tabindex="-1"></a><span class="do">## ASSIGNATION FINALE</span></span>
+<span id="cb155-2"><a href="clustering.html#cb155-2" tabindex="-1"></a>d_n_blue <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(centroide_blue_2,X)))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># Distance de l&#39;ensemble des points au point bleu.</span></span>
+<span id="cb155-3"><a href="clustering.html#cb155-3" tabindex="-1"></a>d_n_gold <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(centroide_jaune_2,X)))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>] <span class="co"># Distance de l&#39;ensemble des points au point jaune.</span></span>
+<span id="cb155-4"><a href="clustering.html#cb155-4" tabindex="-1"></a></span>
+<span id="cb155-5"><a href="clustering.html#cb155-5" tabindex="-1"></a>cluster <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">cbind</span>(d_n_blue, d_n_gold),<span class="dv">1</span>,which.min) <span class="co"># phase d&#39;assignation.</span></span>
+<span id="cb155-6"><a href="clustering.html#cb155-6" tabindex="-1"></a>cluster_col <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">factor</span>(cluster, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="fu">c</span>(<span class="st">&quot;cornflowerblue&quot;</span>, <span class="st">&quot;gold&quot;</span>)))</span>
+<span id="cb155-7"><a href="clustering.html#cb155-7" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">1</span>, <span class="at">col=</span>cluster_col)</span>
+<span id="cb155-8"><a href="clustering.html#cb155-8" tabindex="-1"></a><span class="fu">points</span>(centroide_blue_2[<span class="dv">1</span>], centroide_blue_2[<span class="dv">2</span>],<span class="at">pch=</span><span class="dv">17</span>, <span class="at">col=</span><span class="st">&quot;cornflowerblue&quot;</span>)</span>
+<span id="cb155-9"><a href="clustering.html#cb155-9" tabindex="-1"></a><span class="fu">points</span>(centroide_jaune_2[<span class="dv">1</span>], centroide_jaune_2[<span class="dv">2</span>], <span class="at">pch=</span><span class="dv">17</span>, <span class="at">col=</span><span class="st">&quot;gold&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-87-1.png" alt="" width="672" /></p>
+<blockquote>
+<p>On peut remarquer que l’algorithme converge bien vers les 2 groupes que l’on aurait pu imaginer en regardant le graphique au départ.</p>
+</blockquote>
+<p>On peut aussi utiliser l’algorithme k-means directement sur <code>R</code>, en appelant la function <code>kmeans</code> de la librairie <code>stats</code>.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="clustering.html#cb156-1" tabindex="-1"></a>res.kmeans <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(X, <span class="at">centers =</span> <span class="dv">2</span>, <span class="at">iter.max =</span> <span class="dv">2</span>, <span class="at">nstart =</span> <span class="dv">1</span>)</span>
+<span id="cb156-2"><a href="clustering.html#cb156-2" tabindex="-1"></a><span class="co"># Utiliser le fonction help pour savoir à quoi corresponde les arguments de la fonction.</span></span>
+<span id="cb156-3"><a href="clustering.html#cb156-3" tabindex="-1"></a>res.kmeans</span></code></pre></div>
+<pre><code>## K-means clustering with 2 clusters of sizes 30, 30
+## 
+## Cluster means:
+##         ASAT     ALAT
+## 1 4.13277458 2.113333
+## 2 0.08245817 0.110278
+## 
+## Clustering vector:
+##  [1] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1
+## [39] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+## 
+## Within cluster sum of squares by cluster:
+## [1] 40.91834 51.51169
+##  (between_SS / total_SS =  76.8 %)
+## 
+## Available components:
+## 
+## [1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;     &quot;tot.withinss&quot;
+## [6] &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;         &quot;ifault&quot;</code></pre>
+<p>Dans l’objet <code>res.kmeans</code>, on retrouve :</p>
+<ul>
+<li>les coordonnées des centroïdes en fonction des variables.</li>
+</ul>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="clustering.html#cb158-1" tabindex="-1"></a>res.kmeans<span class="sc">$</span>centers</span></code></pre></div>
+<pre><code>##         ASAT     ALAT
+## 1 4.13277458 2.113333
+## 2 0.08245817 0.110278</code></pre>
+<ul>
+<li>la classe des individus.</li>
+</ul>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="clustering.html#cb160-1" tabindex="-1"></a>res.kmeans<span class="sc">$</span>cluster</span></code></pre></div>
+<pre><code>##  [1] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1
+## [39] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</code></pre>
+<p><strong>On retrouve bien les 30 premiers individus dans un groupe et les 30 derniers dans un autre groupe. C’est exactement de cette manière que nous avons simulé nos données. L’algorithme est donc performant pour retrouver les patterns des individus.</strong></p>
+<hr />
+</div>
+</div>
+<div id="classification-hiérarchique-ascendante" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Classification Hiérarchique Ascendante<a href="clustering.html#classification-hi%C3%A9rarchique-ascendante" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La classification hiérarchique ascendante est basée sur un algorithme glouton : au départ chaque individu forme une classe à lui seul, puis à chaque étape, les deux classes les plus proches sont agglomérées (<strong>critère local</strong>), pour finir avec une classe unique qui regroupe tous les individus.</p>
+<p>L’arbre obtenu est coupé a posteriori de façon à obtenir un bon compromis entre le nombre de classes et la variance intra-classe (<strong>critère global</strong>).</p>
+<p>Cet algorithme se base sur :</p>
+<ul>
+<li><p>une distance entre les individus et,</p></li>
+<li><p>sur une méthode d’agglomération.</p></li>
+</ul>
+<div id="mesure-de-distance-ou-dissimilarité" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Mesure de distance ou dissimilarité<a href="clustering.html#mesure-de-distance-ou-dissimilarit%C3%A9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Une mesure de dissimilarités est un peu différente de la mesure de distance que nous venons de voir. La mesure de dissimilarité mesure à quel point les individus se ressemble ou bien s’éloigne en fonction des variables.</p>
+<p>Il existe plusieurs mesures de dissimilarités : Grover, Bray-Curtis, Jaccard, etc.</p>
+</div>
+<div id="mesure-dagrégation" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Mesure d’agrégation<a href="clustering.html#mesure-dagr%C3%A9gation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Il en existe plusieurs, comme le saut minimum, la distance maximum, la moyenne ou encore la méthode de Ward.</p>
+<p>Chaque méthode génère un résultat différent. Nous n’aborderons pas ici les détails de ces techniques, mais la méthode de <strong>Ward</strong> est souvent privilégiée. Cette méthode vise à minimiser l’inertie à l’intérieur des classes et à maximiser celle entre les classes pour obtenir des groupes aussi homogènes que possible.</p>
+<p>La fonction principale pour calculer un dendrogramme est <code>hclust</code>, où l’on spécifie le critère d’agrégation avec l’option <code>method.</code> Dans notre cas, nous choisirons la méthode de <code>Ward</code> appliquée au carré des distances, en spécifiant <code>method = "ward.D2"</code>.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="clustering.html#cb162-1" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">dist</span>(X) <span class="co"># Distance entre les individus.</span></span>
+<span id="cb162-2"><a href="clustering.html#cb162-2" tabindex="-1"></a>HAC <span class="ot">&lt;-</span> <span class="fu">hclust</span>(D, <span class="at">method =</span> <span class="st">&quot;ward.D&quot;</span>) <span class="co"># Méthode d&#39;agglomération.</span></span>
+<span id="cb162-3"><a href="clustering.html#cb162-3" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">nrow=</span><span class="dv">1</span>))</span>
+<span id="cb162-4"><a href="clustering.html#cb162-4" tabindex="-1"></a><span class="fu">plot</span>(HAC)</span>
+<span id="cb162-5"><a href="clustering.html#cb162-5" tabindex="-1"></a>groupe <span class="ot">&lt;-</span> <span class="fu">cutree</span>(HAC, <span class="dv">2</span>) <span class="co"># Assigner les groupes</span></span>
+<span id="cb162-6"><a href="clustering.html#cb162-6" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">xlab=</span><span class="st">&quot;ASAT&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;ALAT&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span>groupe)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-91-1.png" alt="" width="768" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p>L’arbre est construit du bas vers le haut. On remarque bien que 2 groupes se distinguent.</p>
+</blockquote>
+<hr />
+</div>
+</div>
+<div id="définir-le-nombre-de-classes-optimal" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Définir le nombre de classes optimal ?<a href="clustering.html#d%C3%A9finir-le-nombre-de-classes-optimal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dans certains cas, vous ne serez pas quel nombre de classes choisir. Nous allons définir deux approches possibles vous permettant de prendre une décision pour définir <span class="math inline">\(G\)</span> (nombre de classes).</p>
+<p>Dans cet exemple, j’ai simulé 300 individus en prenant le soin de simuler un jeu de données où les variables permettent de définir un nombre de trois groupes.</p>
+<p>L’objectif de cette partie est de vérifier quel algorithme est le plus performant pour retrouver le nombre de groupe réel.</p>
+<p>Je coloris les groupes que nous devons normalement retrouver.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="clustering.html#cb163-1" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">nrow=</span><span class="dv">1</span>))</span>
+<span id="cb163-2"><a href="clustering.html#cb163-2" tabindex="-1"></a><span class="fu">plot</span>(X[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">xlab =</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>)</span>
+<span id="cb163-3"><a href="clustering.html#cb163-3" tabindex="-1"></a><span class="fu">plot</span>(X[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">xlab =</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">col =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;firebrick&quot;</span>, <span class="st">&quot;cornflowerblue&quot;</span>, <span class="st">&quot;purple&quot;</span>), <span class="at">each=</span><span class="dv">100</span>), <span class="at">pch=</span><span class="dv">16</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-93-1.png" alt="" width="672" /></p>
+<blockquote>
+<p>Le problème que nous présentons ici est plus complexe que celui présenté en début de chapitre.</p>
+</blockquote>
+<div id="première-approche-variance-totale-et-règle-du-coude" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Première approche : Variance totale et règle du coude<a href="clustering.html#premi%C3%A8re-approche-variance-totale-et-r%C3%A8gle-du-coude" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Cette première approche est une approche empirique basée sur votre observation. Par exemple, on fait le <code>kmeans</code> pour différents nombres de classes et on choisit le meilleur compromis entre la variance intra-classe et le nombre de classes.</p>
+<p>On appelle inertie d’un nuage de points la moyenne des carrés des distances des <span class="math inline">\(n\)</span> points au centre de gravité d’une classe, soit :</p>
+<p><span class="math display">\[ I_G (N) = \frac{1}{n} \sum{d(G, x_i)^2}\]</span> Par exemple pour 2 classes, la variance intra-classe se calcule de cette manière :</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="clustering.html#cb164-1" tabindex="-1"></a>var_intra <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb164-2"><a href="clustering.html#cb164-2" tabindex="-1"></a>K <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb164-3"><a href="clustering.html#cb164-3" tabindex="-1"></a>res.class <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(X, <span class="at">centers =</span> K)</span>
+<span id="cb164-4"><a href="clustering.html#cb164-4" tabindex="-1"></a></span>
+<span id="cb164-5"><a href="clustering.html#cb164-5" tabindex="-1"></a><span class="fu">plot</span>(X, <span class="at">col=</span>res.class<span class="sc">$</span>cluster, <span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;y&quot;</span> )</span>
+<span id="cb164-6"><a href="clustering.html#cb164-6" tabindex="-1"></a><span class="fu">points</span>(res.class<span class="sc">$</span>centers,<span class="at">pch=</span><span class="dv">16</span>, <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb164-7"><a href="clustering.html#cb164-7" tabindex="-1"></a></span>
+<span id="cb164-8"><a href="clustering.html#cb164-8" tabindex="-1"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>K){</span>
+<span id="cb164-9"><a href="clustering.html#cb164-9" tabindex="-1"></a>  var_intra <span class="ot">&lt;-</span> <span class="fu">c</span>(var_intra, <span class="fu">mean</span>(<span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(res.class<span class="sc">$</span>centers[k,],</span>
+<span id="cb164-10"><a href="clustering.html#cb164-10" tabindex="-1"></a>                                                      X[<span class="fu">which</span>(res.class<span class="sc">$</span>cluster<span class="sc">==</span>k),])))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>]))</span>
+<span id="cb164-11"><a href="clustering.html#cb164-11" tabindex="-1"></a>  }</span>
+<span id="cb164-12"><a href="clustering.html#cb164-12" tabindex="-1"></a></span>
+<span id="cb164-13"><a href="clustering.html#cb164-13" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>,<span class="fu">paste</span>(<span class="st">&quot;variance intra-classe&quot;</span>, <span class="fu">round</span>(<span class="fu">mean</span>(var_intra), <span class="dv">3</span>)), <span class="at">bty=</span><span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-94-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p>Plus la variance intra-classe est faible et plus les groupes formés sont homogènes.</p>
+</blockquote>
+<p>On calcule ensuite la variance intra-classe pour chaque nombre de clusters estimé (sur l’axe des y sur le graphique).</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="clustering.html#cb165-1" tabindex="-1"></a>K <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb165-2"><a href="clustering.html#cb165-2" tabindex="-1"></a>variance_nc <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb165-3"><a href="clustering.html#cb165-3" tabindex="-1"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>K){</span>
+<span id="cb165-4"><a href="clustering.html#cb165-4" tabindex="-1"></a>  res.class <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(X, <span class="at">centers =</span> k)</span>
+<span id="cb165-5"><a href="clustering.html#cb165-5" tabindex="-1"></a>  var_intra <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb165-6"><a href="clustering.html#cb165-6" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb165-7"><a href="clustering.html#cb165-7" tabindex="-1"></a>    var_intra <span class="ot">&lt;-</span> <span class="fu">c</span>(var_intra, <span class="fu">mean</span>(<span class="fu">as.matrix</span>(<span class="fu">dist</span>(<span class="fu">rbind</span>(res.class<span class="sc">$</span>centers[j,],</span>
+<span id="cb165-8"><a href="clustering.html#cb165-8" tabindex="-1"></a>                                                        X[<span class="fu">which</span>(res.class<span class="sc">$</span>cluster<span class="sc">==</span>j),])))[<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>]))</span>
+<span id="cb165-9"><a href="clustering.html#cb165-9" tabindex="-1"></a>  }</span>
+<span id="cb165-10"><a href="clustering.html#cb165-10" tabindex="-1"></a>  variance_nc <span class="ot">&lt;-</span> <span class="fu">c</span>(variance_nc, <span class="fu">mean</span>(var_intra))</span>
+<span id="cb165-11"><a href="clustering.html#cb165-11" tabindex="-1"></a>}</span>
+<span id="cb165-12"><a href="clustering.html#cb165-12" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, variance_nc, <span class="at">type=</span><span class="st">&#39;l&#39;</span>, <span class="at">xlab =</span> <span class="st">&quot;nb de classes&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Inertie&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-95-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: lower-alpha">
+<li>Quelle serait le nombre de classes adapté pour notre population ?</li>
+</ol>
+<blockquote>
+<p>Attention, votre résultat dépend de l’initialisation des centroïdes : comme on les place aléatoirement, le résultat donné peut être différent quand on relance l’algorithme. Il est donc conseillé de relancer plusieurs fois l’algorithme pour sélectionner la partition dont l’inertie intra-classe sera la plus petite.</p>
+</blockquote>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="clustering.html#cb166-1" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">3</span>), <span class="at">nrow=</span><span class="dv">1</span>))</span>
+<span id="cb166-2"><a href="clustering.html#cb166-2" tabindex="-1"></a><span class="fu">plot</span>(X[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">xlab =</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">main=</span><span class="st">&quot;Population totale&quot;</span>)</span>
+<span id="cb166-3"><a href="clustering.html#cb166-3" tabindex="-1"></a><span class="fu">plot</span>(X[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">xlab =</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">col =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;firebrick&quot;</span>, <span class="st">&quot;cornflowerblue&quot;</span>, <span class="st">&quot;purple&quot;</span>), <span class="at">each=</span><span class="dv">100</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">main=</span><span class="st">&quot;Groupes reels&quot;</span>)</span>
+<span id="cb166-4"><a href="clustering.html#cb166-4" tabindex="-1"></a><span class="fu">plot</span>(X[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], <span class="at">xlab =</span><span class="st">&quot;x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">col =</span> <span class="fu">kmeans</span>(X, <span class="at">centers =</span> <span class="dv">3</span>)<span class="sc">$</span>cluster, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">main=</span><span class="st">&quot;Groupes estimés par le kmeans&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-96-1.png" alt="" width="672" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Refaire la même chose avec la seconde méthode (i.e., HAC) vue dans ce chapitre ? Quelle est la meilleure méthode pour ces données simulées ?</li>
+</ol>
+</div>
+<div id="seconde-approche-coefficient-de-silhouette-ou-calcul-des-plus-proches-voisins." class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Seconde approche : coefficient de Silhouette (ou calcul des plus proches voisins).<a href="clustering.html#seconde-approche-coefficient-de-silhouette-ou-calcul-des-plus-proches-voisins." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le coefficient de silhouette évalue la compacticité et la séparation des clusters (groupes).</p>
+<p>l permet notamment de déterminer le nombre optimal de clusters pour un algorithme de partitionnement.Pour chaque point <span class="math inline">\(i\)</span>, la silhouette compare la distance moyenne aux points de son propre groupe (cohésion) à la distance moyenne aux points du groupe voisin le plus proche (séparation) :</p>
+<ul>
+<li><p>Valeur positive : le point est plus proche de son propre groupe que des groupes voisins, ce qui indique un bon classement.</p></li>
+<li><p>Valeur négative : le point est plus proche d’un groupe voisin que du sien, ce qui signale un mauvais classement.</p></li>
+</ul>
+<p>Le coefficient de silhouette global correspond à la moyenne des coefficients de l’ensemble des points. Il varie entre <span class="math inline">\(-1\)</span> et <span class="math inline">\(1\)</span> : plus sa valeur est proche de <span class="math inline">\(1\)</span>, meilleure est la segmentation.Formulation mathématiqueSoit <span class="math inline">\(C(i) = g\)</span> le groupe auquel appartient le point <span class="math inline">\(i\)</span>.</p>
+<p>L’ensemble des points appartenant au groupe <span class="math inline">\(g\)</span> est défini par :</p>
+<p><span class="math display">\[I_{g} = \{i \in [\![1, N]\!] \mid C(i) = g\}\]</span></p>
+<p>Le coefficient (ou score) de silhouette se calcule d’abord pour un point individuel <span class="math inline">\(i\)</span>. Il repose sur deux distances :</p>
+<ul>
+<li>La distance moyenne intra-groupe (cohésion) :</li>
+</ul>
+<p><span class="math display">\[a(i) = \frac{1}{\vert{}I_{g}\vert{} - 1} \sum_{j \in I_{g},\, j \neq i} d(x^i, x^j)\]</span>
+&gt; Plus <span class="math inline">\(a(i)\)</span> est petit et meilleur est la cohésion.</p>
+<ul>
+<li>La distance moyenne minimale inter-groupes (séparation) :</li>
+</ul>
+<p><span class="math display">\[b(i) = \min_{g&#39; \neq g} \frac{1}{\vert{}I_{g&#39;}\vert{}} \sum_{i&#39; \in I_{g&#39;}} d(x^i, x^{i&#39;})\]</span></p>
+<blockquote>
+<p>Plus <span class="math inline">\(b(i)\)</span> est grand et meilleur est la séparation.</p>
+</blockquote>
+<p>Le coefficient de silhouette du point <span class="math inline">\(i\)</span> s’écrit alors :</p>
+<p><span class="math display">\[s_{\text{sil}}(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}\]</span></p>
+<blockquote>
+<p>Donc plus <span class="math inline">\(b(i) - a(i)\)</span> est positif et meilleur est la cohésion intra-groupe et la séparation inter-groupe.</p>
+</blockquote>
+<hr />
+</div>
+</div>
+<div id="travaux-dirigés" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Travaux dirigés<a href="clustering.html#travaux-dirig%C3%A9s" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Durée : 1h30</p>
+<p><strong>1) Calculer la distance entre les 4 différents individus. Quelles sont les étapes ?</strong></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="clustering.html#cb167-1" tabindex="-1"></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>,</span>
+<span id="cb167-2"><a href="clustering.html#cb167-2" tabindex="-1"></a>               <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>,</span>
+<span id="cb167-3"><a href="clustering.html#cb167-3" tabindex="-1"></a>               <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>,</span>
+<span id="cb167-4"><a href="clustering.html#cb167-4" tabindex="-1"></a>               <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>), <span class="at">byrow =</span> T, <span class="at">nrow =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><em>a. Normalisation. Centrer les données. Calcul de la variance puis écart type. Réduire les données.</em></p>
+<p><em>b. Calculer la matrice de distances <span class="math inline">\(n \times n\)</span> sur les données non normalisées</em></p>
+<p><strong>2) Comment grouperiez-vous les individus ?</strong></p>
+<p><strong>3) Pourquoi l’algorithme du k-means s’intitule en français « algorithme au centre mobile » ?</strong></p>
+<p><strong>4) Quelles sont les étapes de l’algorithme ?</strong></p>
+<p><strong>5) Performance du kmeans. Comment quantifier la performance de classification non supervisée du <code>kmeans</code> ?</strong></p>
+<p><em>a. Visuellement.</em></p>
+<p><em>b. Statistiquement. Calculer l’Accuracy (la vraisemblance du modèle (donc de classification)). Calculer l’erreur du modèle. Test statistique.</em></p>
+<p><em>c. Avec des outliers. Stabilité des résultats ?</em></p>
+<hr />
+</div>
+<div id="travaux-pratiques-2" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Travaux pratiques<a href="clustering.html#travaux-pratiques-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Objectif : Création de son propre algorithme de clustering de type <code>kmeans</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Simuler les données.</li>
+</ol>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="clustering.html#cb168-1" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">ncol=</span><span class="dv">2</span>,<span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb168-2"><a href="clustering.html#cb168-2" tabindex="-1"></a><span class="fu">diag</span>(sigma) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="fl">0.4</span>)</span>
+<span id="cb168-3"><a href="clustering.html#cb168-3" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rbind</span>(mvtnorm<span class="sc">::</span><span class="fu">rmvnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">1.5</span>), sigma),</span>
+<span id="cb168-4"><a href="clustering.html#cb168-4" tabindex="-1"></a>           mvtnorm<span class="sc">::</span><span class="fu">rmvnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>), sigma),</span>
+<span id="cb168-5"><a href="clustering.html#cb168-5" tabindex="-1"></a>           mvtnorm<span class="sc">::</span><span class="fu">rmvnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), sigma))</span></code></pre></div>
+<div id="création-de-votre-propre-algorithme-kmeans-1h." class="section level3 hasAnchor" number="6.6.1">
+<h3><span class="header-section-number">6.6.1</span> Création de votre propre algorithme kmeans (1h).<a href="clustering.html#cr%C3%A9ation-de-votre-propre-algorithme-kmeans-1h." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vous devrez vous aider des lignes de codes écrites dans ce chapitre pour :</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>coder la phase d’INITIALISATION.</p></li>
+<li><p>coder la phase d’ASSIGNEMENT.</p></li>
+<li><p>calculer les nouveaux centres de gravités en fonction de la phase précédente.</p></li>
+<li><p>concaténer les trois fonctions dans une seule et même function.</p></li>
+</ol>
+</div>
+<div id="efficacité-et-comparaison-de-lalgorithme-30-minutes." class="section level3 hasAnchor" number="6.6.2">
+<h3><span class="header-section-number">6.6.2</span> Efficacité et comparaison de l’algorithme (30 minutes).<a href="clustering.html#efficacit%C3%A9-et-comparaison-de-lalgorithme-30-minutes." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Modifier les moyennes des données simulées pour voir comment réagit votre algorithme.</p></li>
+<li><p>Est-il tout le temps efficace ?</p></li>
+<li><p>Ajouter les individus excentrées</p></li>
+</ol>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="clustering.html#cb169-1" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">rbind</span>(X, <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>))</span>
+<span id="cb169-2"><a href="clustering.html#cb169-2" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">rbind</span>(X, <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">3</span>))</span>
+<span id="cb169-3"><a href="clustering.html#cb169-3" tabindex="-1"></a>X <span class="ot">=</span> <span class="fu">rbind</span>(X, <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>))</span></code></pre></div>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Refaire le clustering, qu’observez-vous ?</p></li>
+<li><p>Tester l’algorithme HAC avec différentes distances ?</p></li>
+</ol>
+</div>
+<div id="clustering-1h30." class="section level3 hasAnchor" number="6.6.3">
+<h3><span class="header-section-number">6.6.3</span> Clustering (1h30).<a href="clustering.html#clustering-1h30." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol start="11" style="list-style-type: decimal">
+<li>Implémenter le jeu de données Morpho2.xlsx sur R que vous pouvez télécharger <a href="https://github.com/DCM-UCA/data_cours/blob/main/TPs/morpho2.xlsx"><strong>ICI</strong></a>.</li>
+</ol>
+<p>Utiliser la library <code>readxl</code> et sa fonction <code>read.excel()</code>.</p>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Tester l’algorithme des kmeans sur les colonnes de 2:6.</p></li>
+<li><p>Combien de groupes choisir ?</p></li>
+<li><p>A quoi correspond la colonne 1 ? Manipuler l’information avec la fonction <code>substr()</code> ou bien <code>grep()</code> pour différencier les hommes des femmes.</p></li>
+<li><p>Interpréter les groupes avec les variables sexe et IMC.</p></li>
+<li><p>Refaire la même chose avec l’algorithme HAC.</p></li>
+<li><p>Conclure.</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tests-statistiques-corrélations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analyse-en-composantes-principales.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["Applied statistics.pdf", "Applied statistics.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
