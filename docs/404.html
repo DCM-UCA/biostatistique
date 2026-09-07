@@ -23,7 +23,7 @@
 <meta name="author" content="David Martin Carminati" />
 
 
-<meta name="date" content="2026-09-04" />
+<meta name="date" content="2026-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -141,157 +141,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Statistiques appliquées aux sciences du vivant</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html"><i class="fa fa-check"></i><b>1</b> Introduction au langage de programmation <code>R</code></a>
+<li class="chapter" data-level="1" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>1</b> Clustering</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#rstudio-et-ide."><i class="fa fa-check"></i><b>1.1</b> Rstudio et IDE.</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-pr%C3%A9-requis"><i class="fa fa-check"></i><b>1.2</b> Les pré-requis</a>
+<li class="chapter" data-level="1.1" data-path="clustering.html"><a href="clustering.html#g%C3%A9n%C3%A9ralit%C3%A9s"><i class="fa fa-check"></i><b>1.1</b> Généralités</a></li>
+<li class="chapter" data-level="1.2" data-path="clustering.html"><a href="clustering.html#k-means-ou-algorithme-des-centres-mobiles-en-fran%C3%A7ais"><i class="fa fa-check"></i><b>1.2</b> K-means (ou algorithme des centres mobiles en français)</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-objects"><i class="fa fa-check"></i><b>1.2.1</b> Les objects</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-fonctions"><i class="fa fa-check"></i><b>1.2.2</b> Les fonctions</a></li>
-<li class="chapter" data-level="1.2.3" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-data-frames"><i class="fa fa-check"></i><b>1.2.3</b> Les data-frames</a></li>
+<li class="chapter" data-level="1.2.1" data-path="clustering.html"><a href="clustering.html#principe"><i class="fa fa-check"></i><b>1.2.1</b> Principe</a></li>
+<li class="chapter" data-level="1.2.2" data-path="clustering.html"><a href="clustering.html#algorithme-du-k-means-appartenance-%C3%A0-une-classe-pour-chaque-individu"><i class="fa fa-check"></i><b>1.2.2</b> Algorithme du k-means (appartenance à une classe pour chaque individu)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-boucles"><i class="fa fa-check"></i><b>1.3</b> Les boucles</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-fonctions-version-interm%C3%A9diaire"><i class="fa fa-check"></i><b>1.4</b> Les fonctions (version intermédiaire)</a></li>
+<li class="chapter" data-level="1.3" data-path="clustering.html"><a href="clustering.html#classification-hi%C3%A9rarchique-ascendante"><i class="fa fa-check"></i><b>1.3</b> Classification Hiérarchique Ascendante</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="clustering.html"><a href="clustering.html#mesure-de-distance-ou-dissimilarit%C3%A9"><i class="fa fa-check"></i><b>1.3.1</b> Mesure de distance ou dissimilarité</a></li>
+<li class="chapter" data-level="1.3.2" data-path="clustering.html"><a href="clustering.html#mesure-dagr%C3%A9gation"><i class="fa fa-check"></i><b>1.3.2</b> Mesure d’agrégation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html"><i class="fa fa-check"></i><b>2</b> Test statistique (<span class="math inline">\(\chi^2\)</span>)</a>
+<li class="chapter" data-level="1.4" data-path="clustering.html"><a href="clustering.html#d%C3%A9finir-le-nombre-de-classes-optimal"><i class="fa fa-check"></i><b>1.4</b> Définir le nombre de classes optimal ?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#observationexp%C3%A9riencecausalit%C3%A9-quelques-mots-de-vocabulaire"><i class="fa fa-check"></i><b>2.1</b> Observation/Expérience/Causalité (quelques mots de vocabulaire)</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#%C3%A9chantillonspopulations"><i class="fa fa-check"></i><b>2.1.1</b> Échantillons/populations</a></li>
-<li class="chapter" data-level="2.1.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#donn%C3%A9esindividusvariables"><i class="fa fa-check"></i><b>2.1.2</b> Données/Individus/Variables</a></li>
-<li class="chapter" data-level="2.1.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#m%C3%A9thodologie-danalyse"><i class="fa fa-check"></i><b>2.1.3</b> Méthodologie d’analyse</a></li>
+<li class="chapter" data-level="1.4.1" data-path="clustering.html"><a href="clustering.html#premi%C3%A8re-approche-variance-totale-et-r%C3%A8gle-du-coude"><i class="fa fa-check"></i><b>1.4.1</b> Première approche : Variance totale et règle du coude</a></li>
+<li class="chapter" data-level="1.4.2" data-path="clustering.html"><a href="clustering.html#seconde-approche-coefficient-de-silhouette-ou-calcul-des-plus-proches-voisins."><i class="fa fa-check"></i><b>1.4.2</b> Seconde approche : coefficient de Silhouette (ou calcul des plus proches voisins).</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#test-statistique-avec-2-variables-qualitatives."><i class="fa fa-check"></i><b>2.2</b> Test statistique avec 2 variables qualitatives.</a>
+<li class="chapter" data-level="1.5" data-path="clustering.html"><a href="clustering.html#travaux-dirig%C3%A9s"><i class="fa fa-check"></i><b>1.5</b> Travaux dirigés</a></li>
+<li class="chapter" data-level="1.6" data-path="clustering.html"><a href="clustering.html#travaux-pratiques"><i class="fa fa-check"></i><b>1.6</b> Travaux pratiques</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#statistiques-descriptives-et-visualisations"><i class="fa fa-check"></i><b>2.2.1</b> Statistiques descriptives et visualisations</a></li>
-<li class="chapter" data-level="2.2.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#explication-des-tests-statistiques"><i class="fa fa-check"></i><b>2.2.2</b> Explication des Tests Statistiques</a></li>
-<li class="chapter" data-level="2.2.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#test-statistique-pour-variables-qualitatives-chi2"><i class="fa fa-check"></i><b>2.2.3</b> Test Statistique pour variables qualitatives (<span class="math inline">\(\chi^2\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#r%C3%A9visions"><i class="fa fa-check"></i><b>2.3</b> Révisions</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#qcm"><i class="fa fa-check"></i><b>2.3.1</b> QCM</a></li>
-<li class="chapter" data-level="2.3.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#questions-ouvertes-d%C3%A9finitions"><i class="fa fa-check"></i><b>2.3.2</b> Questions ouvertes (définitions)</a></li>
-<li class="chapter" data-level="2.3.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#probl%C3%A8me"><i class="fa fa-check"></i><b>2.3.3</b> Problème</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#travaux-pratiques"><i class="fa fa-check"></i><b>2.4</b> Travaux Pratiques</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#exercice-1-pokemons."><i class="fa fa-check"></i><b>2.4.1</b> Exercice 1 : Pokemons.</a></li>
-<li class="chapter" data-level="2.4.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#exercice-2-activit%C3%A9-physique."><i class="fa fa-check"></i><b>2.4.2</b> Exercice 2 : Activité physique.</a></li>
+<li class="chapter" data-level="1.6.1" data-path="clustering.html"><a href="clustering.html#cr%C3%A9ation-de-votre-propre-algorithme-kmeans-1h."><i class="fa fa-check"></i><b>1.6.1</b> Création de votre propre algorithme kmeans (1h).</a></li>
+<li class="chapter" data-level="1.6.2" data-path="clustering.html"><a href="clustering.html#efficacit%C3%A9-et-comparaison-de-lalgorithme-30-minutes."><i class="fa fa-check"></i><b>1.6.2</b> Efficacité et comparaison de l’algorithme (30 minutes).</a></li>
+<li class="chapter" data-level="1.6.3" data-path="clustering.html"><a href="clustering.html#clustering-1h30."><i class="fa fa-check"></i><b>1.6.3</b> Clustering (1h30).</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html"><i class="fa fa-check"></i><b>3</b> Tests statistiques (t. test et t. wilcoxon)</a>
+<li class="chapter" data-level="2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html"><i class="fa fa-check"></i><b>2</b> Analyse en Composantes Principales</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#statistiques-descriptives-et-visualisations-1"><i class="fa fa-check"></i><b>3.1</b> Statistiques descriptives et visualisations</a></li>
-<li class="chapter" data-level="3.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-statistique-param%C3%A9trique-et-non-param%C3%A9trique"><i class="fa fa-check"></i><b>3.2</b> Test statistique paramétrique et non paramétrique</a>
+<li class="chapter" data-level="2.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#g%C3%A9n%C3%A9ralit%C3%A9s-1"><i class="fa fa-check"></i><b>2.1</b> Généralités</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#g%C3%A9n%C3%A9ralit%C3%A9s-1"><i class="fa fa-check"></i><b>3.2.1</b> Généralités</a></li>
-<li class="chapter" data-level="3.2.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#pr%C3%A9requis-pour-le-choix-du-test"><i class="fa fa-check"></i><b>3.2.2</b> Prérequis pour le choix du test</a></li>
-<li class="chapter" data-level="3.2.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-param%C3%A9trique-test-de-student"><i class="fa fa-check"></i><b>3.2.3</b> Test paramétrique (test de Student)</a></li>
-<li class="chapter" data-level="3.2.4" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-non-param%C3%A9trique-test-de-wilcoxon-mann-whitney"><i class="fa fa-check"></i><b>3.2.4</b> Test non paramétrique (test de Wilcoxon-Mann-Whitney)</a></li>
+<li class="chapter" data-level="2.1.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#packages-r-factominer"><i class="fa fa-check"></i><b>2.1.1</b> Packages R : <code>FactoMineR</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#normalisation-des-individus-pr%C3%A9-requis"><i class="fa fa-check"></i><b>2.1.2</b> Normalisation des individus : pré-requis</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#r%C3%A9visions-1"><i class="fa fa-check"></i><b>3.3</b> Révisions</a>
+<li class="chapter" data-level="2.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#r%C3%A9aliser-la-pca-sur-r."><i class="fa fa-check"></i><b>2.2</b> Réaliser la PCA sur R.</a></li>
+<li class="chapter" data-level="2.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-de-lacp"><i class="fa fa-check"></i><b>2.3</b> Interprétation de l’ACP</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#rappel"><i class="fa fa-check"></i><b>3.3.1</b> Rappel</a></li>
-<li class="chapter" data-level="3.3.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#qcm-1"><i class="fa fa-check"></i><b>3.3.2</b> QCM</a></li>
-<li class="chapter" data-level="3.3.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#questions-ouvertes-d%C3%A9finitions-1"><i class="fa fa-check"></i><b>3.3.3</b> Questions ouvertes (définitions)</a></li>
-<li class="chapter" data-level="3.3.4" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#exercices-1"><i class="fa fa-check"></i><b>3.3.4</b> Exercices</a></li>
+<li class="chapter" data-level="2.3.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#choix-du-nombre-daxes"><i class="fa fa-check"></i><b>2.3.1</b> Choix du nombre d’axes</a></li>
+<li class="chapter" data-level="2.3.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#cercle-des-corr%C3%A9lations-graphique-des-variables"><i class="fa fa-check"></i><b>2.3.2</b> Cercle des corrélations (graphique des variables)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#qualit%C3%A9-de-repr%C3%A9sentation-cos2-et-contribution-des-variables"><i class="fa fa-check"></i><b>2.3.3</b> Qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et contribution des variables</a></li>
+<li class="chapter" data-level="2.3.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes"><i class="fa fa-check"></i><b>2.3.4</b> Interprétation des axes</a></li>
+<li class="chapter" data-level="2.3.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#graphique-des-individus"><i class="fa fa-check"></i><b>2.3.5</b> Graphique des individus</a></li>
 </ul></li>
+<li class="chapter" data-level="2.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-dirig%C3%A9s-1"><i class="fa fa-check"></i><b>2.4</b> Travaux dirigés</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9sentation-du-projet-des-donn%C3%A9es"><i class="fa fa-check"></i><b>2.4.1</b> Présentation du projet &amp; des données</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html"><i class="fa fa-check"></i><b>4</b> Tests statistiques (ANOVA et Kruskal Wallis)</a>
+<li class="chapter" data-level="2.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-pratiques-1"><i class="fa fa-check"></i><b>2.5</b> Travaux pratiques</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#tests-statistiques-pour-plusieurs-groupes"><i class="fa fa-check"></i><b>4.1</b> Tests statistiques pour plusieurs groupes</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#test-non-param%C3%A9trique-kruskall-wallis"><i class="fa fa-check"></i><b>4.1.1</b> Test non paramétrique (<strong>Kruskall-Wallis</strong>)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#test-param%C3%A9trique-anova"><i class="fa fa-check"></i><b>4.1.2</b> Test paramétrique (<strong>ANOVA</strong>)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#biais-dinterpr%C3%A9tation-li%C3%A9s-%C3%A0-la-multiplicit%C3%A9-des-tests"><i class="fa fa-check"></i><b>4.2</b> Biais d’interprétation liés à la multiplicité des tests</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#th%C3%A9orie-et-demonstration"><i class="fa fa-check"></i><b>4.2.1</b> Théorie et demonstration</a></li>
-<li class="chapter" data-level="4.2.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#correction-de-la-p-value-correction-de-bonferroni"><i class="fa fa-check"></i><b>4.2.2</b> Correction de la <span class="math inline">\(p\)</span> value : correction de Bonferroni</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#r%C3%A9visions-2"><i class="fa fa-check"></i><b>4.3</b> Révisions</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#qcm-2"><i class="fa fa-check"></i><b>4.3.1</b> QCM</a></li>
-<li class="chapter" data-level="4.3.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#questions-ouvertes-d%C3%A9finitions-2"><i class="fa fa-check"></i><b>4.3.2</b> Questions ouvertes (définitions)</a></li>
-<li class="chapter" data-level="4.3.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#probl%C3%A8me-1"><i class="fa fa-check"></i><b>4.3.3</b> Problème</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#travaux-pratiques-1"><i class="fa fa-check"></i><b>4.4</b> Travaux pratiques</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#statistiques-descriptives-du-metabolisme-du-fer"><i class="fa fa-check"></i><b>4.4.1</b> Statistiques descriptives du metabolisme du fer</a></li>
-<li class="chapter" data-level="4.4.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#tests-statistiques"><i class="fa fa-check"></i><b>4.4.2</b> Tests statistiques</a></li>
-<li class="chapter" data-level="4.4.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#modelisation-%C3%A0-2-facteurs"><i class="fa fa-check"></i><b>4.4.3</b> Modelisation à 2 facteurs</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html"><i class="fa fa-check"></i><b>5</b> Tests statistiques (Corrélations)</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#test-dind%C3%A9pendance-entre-2-variables-quantitatives."><i class="fa fa-check"></i><b>5.1</b> Test d’indépendance entre 2 variables <strong>quantitatives</strong>.</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#g%C3%A9n%C3%A9ralit%C3%A9s-2"><i class="fa fa-check"></i><b>5.1.1</b> Généralités</a></li>
-<li class="chapter" data-level="5.1.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#conditions"><i class="fa fa-check"></i><b>5.1.2</b> Conditions</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#param%C3%A8tres-des-tests-de-correlation-exemple-avec-la-m%C3%A9thode-de-pearson"><i class="fa fa-check"></i><b>5.2</b> Paramètres des tests de correlation : Exemple avec la méthode de Pearson</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#premier-param%C3%A8tre-alpha-coefficient-lin%C3%A9aire"><i class="fa fa-check"></i><b>5.2.1</b> Premier paramètre : <span class="math inline">\(\alpha\)</span>, coefficient linéaire</a></li>
-<li class="chapter" data-level="5.2.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#second-param%C3%A8tre-r"><i class="fa fa-check"></i><b>5.2.2</b> Second paramètre : <span class="math inline">\(r\)</span></a></li>
-<li class="chapter" data-level="5.2.3" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#troisi%C3%A8me-param%C3%A8tre-r2"><i class="fa fa-check"></i><b>5.2.3</b> Troisième paramètre : <span class="math inline">\(r^2\)</span></a></li>
-<li class="chapter" data-level="5.2.4" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#quatri%C3%A8me-param%C3%A8tre-p-value"><i class="fa fa-check"></i><b>5.2.4</b> Quatrième paramètre : <span class="math inline">\(p\)</span> value</a></li>
-<li class="chapter" data-level="5.2.5" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#code-r"><i class="fa fa-check"></i><b>5.2.5</b> Code R</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#test-de-spearman"><i class="fa fa-check"></i><b>5.3</b> Test de Spearman</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>6</b> Clustering</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="clustering.html"><a href="clustering.html#g%C3%A9n%C3%A9ralit%C3%A9s-3"><i class="fa fa-check"></i><b>6.1</b> Généralités</a></li>
-<li class="chapter" data-level="6.2" data-path="clustering.html"><a href="clustering.html#k-means-ou-algorithme-des-centres-mobiles-en-fran%C3%A7ais"><i class="fa fa-check"></i><b>6.2</b> K-means (ou algorithme des centres mobiles en français)</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="clustering.html"><a href="clustering.html#principe"><i class="fa fa-check"></i><b>6.2.1</b> Principe</a></li>
-<li class="chapter" data-level="6.2.2" data-path="clustering.html"><a href="clustering.html#algorithme-du-k-means-appartenance-%C3%A0-une-classe-pour-chaque-individu"><i class="fa fa-check"></i><b>6.2.2</b> Algorithme du k-means (appartenance à une classe pour chaque individu)</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="clustering.html"><a href="clustering.html#classification-hi%C3%A9rarchique-ascendante"><i class="fa fa-check"></i><b>6.3</b> Classification Hiérarchique Ascendante</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="clustering.html"><a href="clustering.html#mesure-de-distance-ou-dissimilarit%C3%A9"><i class="fa fa-check"></i><b>6.3.1</b> Mesure de distance ou dissimilarité</a></li>
-<li class="chapter" data-level="6.3.2" data-path="clustering.html"><a href="clustering.html#mesure-dagr%C3%A9gation"><i class="fa fa-check"></i><b>6.3.2</b> Mesure d’agrégation</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="clustering.html"><a href="clustering.html#d%C3%A9finir-le-nombre-de-classes-optimal"><i class="fa fa-check"></i><b>6.4</b> Définir le nombre de classes optimal ?</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="clustering.html"><a href="clustering.html#premi%C3%A8re-approche-variance-totale-et-r%C3%A8gle-du-coude"><i class="fa fa-check"></i><b>6.4.1</b> Première approche : Variance totale et règle du coude</a></li>
-<li class="chapter" data-level="6.4.2" data-path="clustering.html"><a href="clustering.html#seconde-approche-coefficient-de-silhouette-ou-calcul-des-plus-proches-voisins."><i class="fa fa-check"></i><b>6.4.2</b> Seconde approche : coefficient de Silhouette (ou calcul des plus proches voisins).</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="clustering.html"><a href="clustering.html#travaux-dirig%C3%A9s"><i class="fa fa-check"></i><b>6.5</b> Travaux dirigés</a></li>
-<li class="chapter" data-level="6.6" data-path="clustering.html"><a href="clustering.html#travaux-pratiques-2"><i class="fa fa-check"></i><b>6.6</b> Travaux pratiques</a>
-<ul>
-<li class="chapter" data-level="6.6.1" data-path="clustering.html"><a href="clustering.html#cr%C3%A9ation-de-votre-propre-algorithme-kmeans-1h."><i class="fa fa-check"></i><b>6.6.1</b> Création de votre propre algorithme kmeans (1h).</a></li>
-<li class="chapter" data-level="6.6.2" data-path="clustering.html"><a href="clustering.html#efficacit%C3%A9-et-comparaison-de-lalgorithme-30-minutes."><i class="fa fa-check"></i><b>6.6.2</b> Efficacité et comparaison de l’algorithme (30 minutes).</a></li>
-<li class="chapter" data-level="6.6.3" data-path="clustering.html"><a href="clustering.html#clustering-1h30."><i class="fa fa-check"></i><b>6.6.3</b> Clustering (1h30).</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html"><i class="fa fa-check"></i><b>7</b> Analyse en Composantes Principales</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#g%C3%A9n%C3%A9ralit%C3%A9s-4"><i class="fa fa-check"></i><b>7.1</b> Généralités</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#packages-r-factominer"><i class="fa fa-check"></i><b>7.1.1</b> Packages R : <code>FactoMineR</code></a></li>
-<li class="chapter" data-level="7.1.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#normalisation-des-individus-pr%C3%A9-requis"><i class="fa fa-check"></i><b>7.1.2</b> Normalisation des individus : pré-requis</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#r%C3%A9aliser-la-pca-sur-r."><i class="fa fa-check"></i><b>7.2</b> Réaliser la PCA sur R.</a></li>
-<li class="chapter" data-level="7.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-de-lacp"><i class="fa fa-check"></i><b>7.3</b> Interprétation de l’ACP</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#choix-du-nombre-daxes"><i class="fa fa-check"></i><b>7.3.1</b> Choix du nombre d’axes</a></li>
-<li class="chapter" data-level="7.3.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#cercle-des-corr%C3%A9lations-graphique-des-variables"><i class="fa fa-check"></i><b>7.3.2</b> Cercle des corrélations (graphique des variables)</a></li>
-<li class="chapter" data-level="7.3.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#qualit%C3%A9-de-repr%C3%A9sentation-cos2-et-contribution-des-variables"><i class="fa fa-check"></i><b>7.3.3</b> Qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et contribution des variables</a></li>
-<li class="chapter" data-level="7.3.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes"><i class="fa fa-check"></i><b>7.3.4</b> Interprétation des axes</a></li>
-<li class="chapter" data-level="7.3.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#graphique-des-individus"><i class="fa fa-check"></i><b>7.3.5</b> Graphique des individus</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-dirig%C3%A9s-1"><i class="fa fa-check"></i><b>7.4</b> Travaux dirigés</a>
-<ul>
-<li class="chapter" data-level="7.4.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9sentation-du-projet-des-donn%C3%A9es"><i class="fa fa-check"></i><b>7.4.1</b> Présentation du projet &amp; des données</a></li>
-</ul></li>
-<li class="chapter" data-level="7.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-pratiques-3"><i class="fa fa-check"></i><b>7.5</b> Travaux pratiques</a>
-<ul>
-<li class="chapter" data-level="7.5.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire"><i class="fa fa-check"></i><b>7.5.1</b> Préparation des données (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales-obligatoire"><i class="fa fa-check"></i><b>7.5.2</b> Analyse en composantes principales (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes-obligatoire"><i class="fa fa-check"></i><b>7.5.3</b> Interprétation des axes (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-individus-obligatoire"><i class="fa fa-check"></i><b>7.5.4</b> Interprétation des individus (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#validit%C3%A9-de-linterpr%C3%A9tation-bonus-version-expert"><i class="fa fa-check"></i><b>7.5.5</b> Validité de l’interprétation (bonus, version expert)</a></li>
+<li class="chapter" data-level="2.5.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire"><i class="fa fa-check"></i><b>2.5.1</b> Préparation des données (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales-obligatoire"><i class="fa fa-check"></i><b>2.5.2</b> Analyse en composantes principales (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes-obligatoire"><i class="fa fa-check"></i><b>2.5.3</b> Interprétation des axes (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-individus-obligatoire"><i class="fa fa-check"></i><b>2.5.4</b> Interprétation des individus (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#validit%C3%A9-de-linterpr%C3%A9tation-bonus-version-expert"><i class="fa fa-check"></i><b>2.5.5</b> Validité de l’interprétation (bonus, version expert)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>

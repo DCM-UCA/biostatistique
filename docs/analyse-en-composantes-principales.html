@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 7 Analyse en Composantes Principales | Statistiques appliquées aux sciences du vivant et de l’environnement</title>
+  <title>Chapitre 2 Analyse en Composantes Principales | Statistiques appliquées aux sciences du vivant et de l’environnement</title>
   <meta name="description" content="Ce livre est à destination des étudiants qui veulent approfondir leur connaissance en statistiques appliquées aux sciences du vivant." />
   <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 7 Analyse en Composantes Principales | Statistiques appliquées aux sciences du vivant et de l’environnement" />
+  <meta property="og:title" content="Chapitre 2 Analyse en Composantes Principales | Statistiques appliquées aux sciences du vivant et de l’environnement" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Ce livre est à destination des étudiants qui veulent approfondir leur connaissance en statistiques appliquées aux sciences du vivant." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 7 Analyse en Composantes Principales | Statistiques appliquées aux sciences du vivant et de l’environnement" />
+  <meta name="twitter:title" content="Chapitre 2 Analyse en Composantes Principales | Statistiques appliquées aux sciences du vivant et de l’environnement" />
   
   <meta name="twitter:description" content="Ce livre est à destination des étudiants qui veulent approfondir leur connaissance en statistiques appliquées aux sciences du vivant." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="David Martin Carminati" />
 
 
-<meta name="date" content="2026-09-04" />
+<meta name="date" content="2026-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -141,157 +141,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Statistiques appliquées aux sciences du vivant</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html"><i class="fa fa-check"></i><b>1</b> Introduction au langage de programmation <code>R</code></a>
+<li class="chapter" data-level="1" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>1</b> Clustering</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#rstudio-et-ide."><i class="fa fa-check"></i><b>1.1</b> Rstudio et IDE.</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-pr%C3%A9-requis"><i class="fa fa-check"></i><b>1.2</b> Les pré-requis</a>
+<li class="chapter" data-level="1.1" data-path="clustering.html"><a href="clustering.html#g%C3%A9n%C3%A9ralit%C3%A9s"><i class="fa fa-check"></i><b>1.1</b> Généralités</a></li>
+<li class="chapter" data-level="1.2" data-path="clustering.html"><a href="clustering.html#k-means-ou-algorithme-des-centres-mobiles-en-fran%C3%A7ais"><i class="fa fa-check"></i><b>1.2</b> K-means (ou algorithme des centres mobiles en français)</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-objects"><i class="fa fa-check"></i><b>1.2.1</b> Les objects</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-fonctions"><i class="fa fa-check"></i><b>1.2.2</b> Les fonctions</a></li>
-<li class="chapter" data-level="1.2.3" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-data-frames"><i class="fa fa-check"></i><b>1.2.3</b> Les data-frames</a></li>
+<li class="chapter" data-level="1.2.1" data-path="clustering.html"><a href="clustering.html#principe"><i class="fa fa-check"></i><b>1.2.1</b> Principe</a></li>
+<li class="chapter" data-level="1.2.2" data-path="clustering.html"><a href="clustering.html#algorithme-du-k-means-appartenance-%C3%A0-une-classe-pour-chaque-individu"><i class="fa fa-check"></i><b>1.2.2</b> Algorithme du k-means (appartenance à une classe pour chaque individu)</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-boucles"><i class="fa fa-check"></i><b>1.3</b> Les boucles</a></li>
-<li class="chapter" data-level="1.4" data-path="introduction-au-langage-de-programmation-r.html"><a href="introduction-au-langage-de-programmation-r.html#les-fonctions-version-interm%C3%A9diaire"><i class="fa fa-check"></i><b>1.4</b> Les fonctions (version intermédiaire)</a></li>
+<li class="chapter" data-level="1.3" data-path="clustering.html"><a href="clustering.html#classification-hi%C3%A9rarchique-ascendante"><i class="fa fa-check"></i><b>1.3</b> Classification Hiérarchique Ascendante</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="clustering.html"><a href="clustering.html#mesure-de-distance-ou-dissimilarit%C3%A9"><i class="fa fa-check"></i><b>1.3.1</b> Mesure de distance ou dissimilarité</a></li>
+<li class="chapter" data-level="1.3.2" data-path="clustering.html"><a href="clustering.html#mesure-dagr%C3%A9gation"><i class="fa fa-check"></i><b>1.3.2</b> Mesure d’agrégation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html"><i class="fa fa-check"></i><b>2</b> Test statistique (<span class="math inline">\(\chi^2\)</span>)</a>
+<li class="chapter" data-level="1.4" data-path="clustering.html"><a href="clustering.html#d%C3%A9finir-le-nombre-de-classes-optimal"><i class="fa fa-check"></i><b>1.4</b> Définir le nombre de classes optimal ?</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#observationexp%C3%A9riencecausalit%C3%A9-quelques-mots-de-vocabulaire"><i class="fa fa-check"></i><b>2.1</b> Observation/Expérience/Causalité (quelques mots de vocabulaire)</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#%C3%A9chantillonspopulations"><i class="fa fa-check"></i><b>2.1.1</b> Échantillons/populations</a></li>
-<li class="chapter" data-level="2.1.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#donn%C3%A9esindividusvariables"><i class="fa fa-check"></i><b>2.1.2</b> Données/Individus/Variables</a></li>
-<li class="chapter" data-level="2.1.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#m%C3%A9thodologie-danalyse"><i class="fa fa-check"></i><b>2.1.3</b> Méthodologie d’analyse</a></li>
+<li class="chapter" data-level="1.4.1" data-path="clustering.html"><a href="clustering.html#premi%C3%A8re-approche-variance-totale-et-r%C3%A8gle-du-coude"><i class="fa fa-check"></i><b>1.4.1</b> Première approche : Variance totale et règle du coude</a></li>
+<li class="chapter" data-level="1.4.2" data-path="clustering.html"><a href="clustering.html#seconde-approche-coefficient-de-silhouette-ou-calcul-des-plus-proches-voisins."><i class="fa fa-check"></i><b>1.4.2</b> Seconde approche : coefficient de Silhouette (ou calcul des plus proches voisins).</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#test-statistique-avec-2-variables-qualitatives."><i class="fa fa-check"></i><b>2.2</b> Test statistique avec 2 variables qualitatives.</a>
+<li class="chapter" data-level="1.5" data-path="clustering.html"><a href="clustering.html#travaux-dirig%C3%A9s"><i class="fa fa-check"></i><b>1.5</b> Travaux dirigés</a></li>
+<li class="chapter" data-level="1.6" data-path="clustering.html"><a href="clustering.html#travaux-pratiques"><i class="fa fa-check"></i><b>1.6</b> Travaux pratiques</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#statistiques-descriptives-et-visualisations"><i class="fa fa-check"></i><b>2.2.1</b> Statistiques descriptives et visualisations</a></li>
-<li class="chapter" data-level="2.2.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#explication-des-tests-statistiques"><i class="fa fa-check"></i><b>2.2.2</b> Explication des Tests Statistiques</a></li>
-<li class="chapter" data-level="2.2.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#test-statistique-pour-variables-qualitatives-chi2"><i class="fa fa-check"></i><b>2.2.3</b> Test Statistique pour variables qualitatives (<span class="math inline">\(\chi^2\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#r%C3%A9visions"><i class="fa fa-check"></i><b>2.3</b> Révisions</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#qcm"><i class="fa fa-check"></i><b>2.3.1</b> QCM</a></li>
-<li class="chapter" data-level="2.3.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#questions-ouvertes-d%C3%A9finitions"><i class="fa fa-check"></i><b>2.3.2</b> Questions ouvertes (définitions)</a></li>
-<li class="chapter" data-level="2.3.3" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#probl%C3%A8me"><i class="fa fa-check"></i><b>2.3.3</b> Problème</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#travaux-pratiques"><i class="fa fa-check"></i><b>2.4</b> Travaux Pratiques</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#exercice-1-pokemons."><i class="fa fa-check"></i><b>2.4.1</b> Exercice 1 : Pokemons.</a></li>
-<li class="chapter" data-level="2.4.2" data-path="test-statistique-chi2.html"><a href="test-statistique-chi2.html#exercice-2-activit%C3%A9-physique."><i class="fa fa-check"></i><b>2.4.2</b> Exercice 2 : Activité physique.</a></li>
+<li class="chapter" data-level="1.6.1" data-path="clustering.html"><a href="clustering.html#cr%C3%A9ation-de-votre-propre-algorithme-kmeans-1h."><i class="fa fa-check"></i><b>1.6.1</b> Création de votre propre algorithme kmeans (1h).</a></li>
+<li class="chapter" data-level="1.6.2" data-path="clustering.html"><a href="clustering.html#efficacit%C3%A9-et-comparaison-de-lalgorithme-30-minutes."><i class="fa fa-check"></i><b>1.6.2</b> Efficacité et comparaison de l’algorithme (30 minutes).</a></li>
+<li class="chapter" data-level="1.6.3" data-path="clustering.html"><a href="clustering.html#clustering-1h30."><i class="fa fa-check"></i><b>1.6.3</b> Clustering (1h30).</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html"><i class="fa fa-check"></i><b>3</b> Tests statistiques (t. test et t. wilcoxon)</a>
+<li class="chapter" data-level="2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html"><i class="fa fa-check"></i><b>2</b> Analyse en Composantes Principales</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#statistiques-descriptives-et-visualisations-1"><i class="fa fa-check"></i><b>3.1</b> Statistiques descriptives et visualisations</a></li>
-<li class="chapter" data-level="3.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-statistique-param%C3%A9trique-et-non-param%C3%A9trique"><i class="fa fa-check"></i><b>3.2</b> Test statistique paramétrique et non paramétrique</a>
+<li class="chapter" data-level="2.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#g%C3%A9n%C3%A9ralit%C3%A9s-1"><i class="fa fa-check"></i><b>2.1</b> Généralités</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#g%C3%A9n%C3%A9ralit%C3%A9s-1"><i class="fa fa-check"></i><b>3.2.1</b> Généralités</a></li>
-<li class="chapter" data-level="3.2.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#pr%C3%A9requis-pour-le-choix-du-test"><i class="fa fa-check"></i><b>3.2.2</b> Prérequis pour le choix du test</a></li>
-<li class="chapter" data-level="3.2.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-param%C3%A9trique-test-de-student"><i class="fa fa-check"></i><b>3.2.3</b> Test paramétrique (test de Student)</a></li>
-<li class="chapter" data-level="3.2.4" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#test-non-param%C3%A9trique-test-de-wilcoxon-mann-whitney"><i class="fa fa-check"></i><b>3.2.4</b> Test non paramétrique (test de Wilcoxon-Mann-Whitney)</a></li>
+<li class="chapter" data-level="2.1.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#packages-r-factominer"><i class="fa fa-check"></i><b>2.1.1</b> Packages R : <code>FactoMineR</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#normalisation-des-individus-pr%C3%A9-requis"><i class="fa fa-check"></i><b>2.1.2</b> Normalisation des individus : pré-requis</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#r%C3%A9visions-1"><i class="fa fa-check"></i><b>3.3</b> Révisions</a>
+<li class="chapter" data-level="2.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#r%C3%A9aliser-la-pca-sur-r."><i class="fa fa-check"></i><b>2.2</b> Réaliser la PCA sur R.</a></li>
+<li class="chapter" data-level="2.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-de-lacp"><i class="fa fa-check"></i><b>2.3</b> Interprétation de l’ACP</a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#rappel"><i class="fa fa-check"></i><b>3.3.1</b> Rappel</a></li>
-<li class="chapter" data-level="3.3.2" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#qcm-1"><i class="fa fa-check"></i><b>3.3.2</b> QCM</a></li>
-<li class="chapter" data-level="3.3.3" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#questions-ouvertes-d%C3%A9finitions-1"><i class="fa fa-check"></i><b>3.3.3</b> Questions ouvertes (définitions)</a></li>
-<li class="chapter" data-level="3.3.4" data-path="tests-statistiques-t.-test-et-t.-wilcoxon.html"><a href="tests-statistiques-t.-test-et-t.-wilcoxon.html#exercices-1"><i class="fa fa-check"></i><b>3.3.4</b> Exercices</a></li>
+<li class="chapter" data-level="2.3.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#choix-du-nombre-daxes"><i class="fa fa-check"></i><b>2.3.1</b> Choix du nombre d’axes</a></li>
+<li class="chapter" data-level="2.3.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#cercle-des-corr%C3%A9lations-graphique-des-variables"><i class="fa fa-check"></i><b>2.3.2</b> Cercle des corrélations (graphique des variables)</a></li>
+<li class="chapter" data-level="2.3.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#qualit%C3%A9-de-repr%C3%A9sentation-cos2-et-contribution-des-variables"><i class="fa fa-check"></i><b>2.3.3</b> Qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et contribution des variables</a></li>
+<li class="chapter" data-level="2.3.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes"><i class="fa fa-check"></i><b>2.3.4</b> Interprétation des axes</a></li>
+<li class="chapter" data-level="2.3.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#graphique-des-individus"><i class="fa fa-check"></i><b>2.3.5</b> Graphique des individus</a></li>
 </ul></li>
+<li class="chapter" data-level="2.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-dirig%C3%A9s-1"><i class="fa fa-check"></i><b>2.4</b> Travaux dirigés</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9sentation-du-projet-des-donn%C3%A9es"><i class="fa fa-check"></i><b>2.4.1</b> Présentation du projet &amp; des données</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html"><i class="fa fa-check"></i><b>4</b> Tests statistiques (ANOVA et Kruskal Wallis)</a>
+<li class="chapter" data-level="2.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-pratiques-1"><i class="fa fa-check"></i><b>2.5</b> Travaux pratiques</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#tests-statistiques-pour-plusieurs-groupes"><i class="fa fa-check"></i><b>4.1</b> Tests statistiques pour plusieurs groupes</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#test-non-param%C3%A9trique-kruskall-wallis"><i class="fa fa-check"></i><b>4.1.1</b> Test non paramétrique (<strong>Kruskall-Wallis</strong>)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#test-param%C3%A9trique-anova"><i class="fa fa-check"></i><b>4.1.2</b> Test paramétrique (<strong>ANOVA</strong>)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#biais-dinterpr%C3%A9tation-li%C3%A9s-%C3%A0-la-multiplicit%C3%A9-des-tests"><i class="fa fa-check"></i><b>4.2</b> Biais d’interprétation liés à la multiplicité des tests</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#th%C3%A9orie-et-demonstration"><i class="fa fa-check"></i><b>4.2.1</b> Théorie et demonstration</a></li>
-<li class="chapter" data-level="4.2.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#correction-de-la-p-value-correction-de-bonferroni"><i class="fa fa-check"></i><b>4.2.2</b> Correction de la <span class="math inline">\(p\)</span> value : correction de Bonferroni</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#r%C3%A9visions-2"><i class="fa fa-check"></i><b>4.3</b> Révisions</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#qcm-2"><i class="fa fa-check"></i><b>4.3.1</b> QCM</a></li>
-<li class="chapter" data-level="4.3.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#questions-ouvertes-d%C3%A9finitions-2"><i class="fa fa-check"></i><b>4.3.2</b> Questions ouvertes (définitions)</a></li>
-<li class="chapter" data-level="4.3.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#probl%C3%A8me-1"><i class="fa fa-check"></i><b>4.3.3</b> Problème</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#travaux-pratiques-1"><i class="fa fa-check"></i><b>4.4</b> Travaux pratiques</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#statistiques-descriptives-du-metabolisme-du-fer"><i class="fa fa-check"></i><b>4.4.1</b> Statistiques descriptives du metabolisme du fer</a></li>
-<li class="chapter" data-level="4.4.2" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#tests-statistiques"><i class="fa fa-check"></i><b>4.4.2</b> Tests statistiques</a></li>
-<li class="chapter" data-level="4.4.3" data-path="tests-statistiques-anova-et-kruskal-wallis.html"><a href="tests-statistiques-anova-et-kruskal-wallis.html#modelisation-%C3%A0-2-facteurs"><i class="fa fa-check"></i><b>4.4.3</b> Modelisation à 2 facteurs</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html"><i class="fa fa-check"></i><b>5</b> Tests statistiques (Corrélations)</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#test-dind%C3%A9pendance-entre-2-variables-quantitatives."><i class="fa fa-check"></i><b>5.1</b> Test d’indépendance entre 2 variables <strong>quantitatives</strong>.</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#g%C3%A9n%C3%A9ralit%C3%A9s-2"><i class="fa fa-check"></i><b>5.1.1</b> Généralités</a></li>
-<li class="chapter" data-level="5.1.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#conditions"><i class="fa fa-check"></i><b>5.1.2</b> Conditions</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#param%C3%A8tres-des-tests-de-correlation-exemple-avec-la-m%C3%A9thode-de-pearson"><i class="fa fa-check"></i><b>5.2</b> Paramètres des tests de correlation : Exemple avec la méthode de Pearson</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#premier-param%C3%A8tre-alpha-coefficient-lin%C3%A9aire"><i class="fa fa-check"></i><b>5.2.1</b> Premier paramètre : <span class="math inline">\(\alpha\)</span>, coefficient linéaire</a></li>
-<li class="chapter" data-level="5.2.2" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#second-param%C3%A8tre-r"><i class="fa fa-check"></i><b>5.2.2</b> Second paramètre : <span class="math inline">\(r\)</span></a></li>
-<li class="chapter" data-level="5.2.3" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#troisi%C3%A8me-param%C3%A8tre-r2"><i class="fa fa-check"></i><b>5.2.3</b> Troisième paramètre : <span class="math inline">\(r^2\)</span></a></li>
-<li class="chapter" data-level="5.2.4" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#quatri%C3%A8me-param%C3%A8tre-p-value"><i class="fa fa-check"></i><b>5.2.4</b> Quatrième paramètre : <span class="math inline">\(p\)</span> value</a></li>
-<li class="chapter" data-level="5.2.5" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#code-r"><i class="fa fa-check"></i><b>5.2.5</b> Code R</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="tests-statistiques-corrélations.html"><a href="tests-statistiques-corrélations.html#test-de-spearman"><i class="fa fa-check"></i><b>5.3</b> Test de Spearman</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="clustering.html"><a href="clustering.html"><i class="fa fa-check"></i><b>6</b> Clustering</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="clustering.html"><a href="clustering.html#g%C3%A9n%C3%A9ralit%C3%A9s-3"><i class="fa fa-check"></i><b>6.1</b> Généralités</a></li>
-<li class="chapter" data-level="6.2" data-path="clustering.html"><a href="clustering.html#k-means-ou-algorithme-des-centres-mobiles-en-fran%C3%A7ais"><i class="fa fa-check"></i><b>6.2</b> K-means (ou algorithme des centres mobiles en français)</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="clustering.html"><a href="clustering.html#principe"><i class="fa fa-check"></i><b>6.2.1</b> Principe</a></li>
-<li class="chapter" data-level="6.2.2" data-path="clustering.html"><a href="clustering.html#algorithme-du-k-means-appartenance-%C3%A0-une-classe-pour-chaque-individu"><i class="fa fa-check"></i><b>6.2.2</b> Algorithme du k-means (appartenance à une classe pour chaque individu)</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="clustering.html"><a href="clustering.html#classification-hi%C3%A9rarchique-ascendante"><i class="fa fa-check"></i><b>6.3</b> Classification Hiérarchique Ascendante</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="clustering.html"><a href="clustering.html#mesure-de-distance-ou-dissimilarit%C3%A9"><i class="fa fa-check"></i><b>6.3.1</b> Mesure de distance ou dissimilarité</a></li>
-<li class="chapter" data-level="6.3.2" data-path="clustering.html"><a href="clustering.html#mesure-dagr%C3%A9gation"><i class="fa fa-check"></i><b>6.3.2</b> Mesure d’agrégation</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="clustering.html"><a href="clustering.html#d%C3%A9finir-le-nombre-de-classes-optimal"><i class="fa fa-check"></i><b>6.4</b> Définir le nombre de classes optimal ?</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="clustering.html"><a href="clustering.html#premi%C3%A8re-approche-variance-totale-et-r%C3%A8gle-du-coude"><i class="fa fa-check"></i><b>6.4.1</b> Première approche : Variance totale et règle du coude</a></li>
-<li class="chapter" data-level="6.4.2" data-path="clustering.html"><a href="clustering.html#seconde-approche-coefficient-de-silhouette-ou-calcul-des-plus-proches-voisins."><i class="fa fa-check"></i><b>6.4.2</b> Seconde approche : coefficient de Silhouette (ou calcul des plus proches voisins).</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="clustering.html"><a href="clustering.html#travaux-dirig%C3%A9s"><i class="fa fa-check"></i><b>6.5</b> Travaux dirigés</a></li>
-<li class="chapter" data-level="6.6" data-path="clustering.html"><a href="clustering.html#travaux-pratiques-2"><i class="fa fa-check"></i><b>6.6</b> Travaux pratiques</a>
-<ul>
-<li class="chapter" data-level="6.6.1" data-path="clustering.html"><a href="clustering.html#cr%C3%A9ation-de-votre-propre-algorithme-kmeans-1h."><i class="fa fa-check"></i><b>6.6.1</b> Création de votre propre algorithme kmeans (1h).</a></li>
-<li class="chapter" data-level="6.6.2" data-path="clustering.html"><a href="clustering.html#efficacit%C3%A9-et-comparaison-de-lalgorithme-30-minutes."><i class="fa fa-check"></i><b>6.6.2</b> Efficacité et comparaison de l’algorithme (30 minutes).</a></li>
-<li class="chapter" data-level="6.6.3" data-path="clustering.html"><a href="clustering.html#clustering-1h30."><i class="fa fa-check"></i><b>6.6.3</b> Clustering (1h30).</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html"><i class="fa fa-check"></i><b>7</b> Analyse en Composantes Principales</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#g%C3%A9n%C3%A9ralit%C3%A9s-4"><i class="fa fa-check"></i><b>7.1</b> Généralités</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#packages-r-factominer"><i class="fa fa-check"></i><b>7.1.1</b> Packages R : <code>FactoMineR</code></a></li>
-<li class="chapter" data-level="7.1.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#normalisation-des-individus-pr%C3%A9-requis"><i class="fa fa-check"></i><b>7.1.2</b> Normalisation des individus : pré-requis</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#r%C3%A9aliser-la-pca-sur-r."><i class="fa fa-check"></i><b>7.2</b> Réaliser la PCA sur R.</a></li>
-<li class="chapter" data-level="7.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-de-lacp"><i class="fa fa-check"></i><b>7.3</b> Interprétation de l’ACP</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#choix-du-nombre-daxes"><i class="fa fa-check"></i><b>7.3.1</b> Choix du nombre d’axes</a></li>
-<li class="chapter" data-level="7.3.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#cercle-des-corr%C3%A9lations-graphique-des-variables"><i class="fa fa-check"></i><b>7.3.2</b> Cercle des corrélations (graphique des variables)</a></li>
-<li class="chapter" data-level="7.3.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#qualit%C3%A9-de-repr%C3%A9sentation-cos2-et-contribution-des-variables"><i class="fa fa-check"></i><b>7.3.3</b> Qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et contribution des variables</a></li>
-<li class="chapter" data-level="7.3.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes"><i class="fa fa-check"></i><b>7.3.4</b> Interprétation des axes</a></li>
-<li class="chapter" data-level="7.3.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#graphique-des-individus"><i class="fa fa-check"></i><b>7.3.5</b> Graphique des individus</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-dirig%C3%A9s-1"><i class="fa fa-check"></i><b>7.4</b> Travaux dirigés</a>
-<ul>
-<li class="chapter" data-level="7.4.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9sentation-du-projet-des-donn%C3%A9es"><i class="fa fa-check"></i><b>7.4.1</b> Présentation du projet &amp; des données</a></li>
-</ul></li>
-<li class="chapter" data-level="7.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#travaux-pratiques-3"><i class="fa fa-check"></i><b>7.5</b> Travaux pratiques</a>
-<ul>
-<li class="chapter" data-level="7.5.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire"><i class="fa fa-check"></i><b>7.5.1</b> Préparation des données (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales-obligatoire"><i class="fa fa-check"></i><b>7.5.2</b> Analyse en composantes principales (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes-obligatoire"><i class="fa fa-check"></i><b>7.5.3</b> Interprétation des axes (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-individus-obligatoire"><i class="fa fa-check"></i><b>7.5.4</b> Interprétation des individus (obligatoire)</a></li>
-<li class="chapter" data-level="7.5.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#validit%C3%A9-de-linterpr%C3%A9tation-bonus-version-expert"><i class="fa fa-check"></i><b>7.5.5</b> Validité de l’interprétation (bonus, version expert)</a></li>
+<li class="chapter" data-level="2.5.1" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire"><i class="fa fa-check"></i><b>2.5.1</b> Préparation des données (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.2" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales-obligatoire"><i class="fa fa-check"></i><b>2.5.2</b> Analyse en composantes principales (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.3" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes-obligatoire"><i class="fa fa-check"></i><b>2.5.3</b> Interprétation des axes (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.4" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-individus-obligatoire"><i class="fa fa-check"></i><b>2.5.4</b> Interprétation des individus (obligatoire)</a></li>
+<li class="chapter" data-level="2.5.5" data-path="analyse-en-composantes-principales.html"><a href="analyse-en-composantes-principales.html#validit%C3%A9-de-linterpr%C3%A9tation-bonus-version-expert"><i class="fa fa-check"></i><b>2.5.5</b> Validité de l’interprétation (bonus, version expert)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -314,21 +216,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="analyse-en-composantes-principales" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapitre 7</span> Analyse en Composantes Principales<a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="analyse-en-composantes-principales" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapitre 2</span> Analyse en Composantes Principales<a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>L’objectif de ce chapitre est de comprendre l’Analyse en Composantes Principales (ACP), un outil incontournable pour explorer des données multivariées.</p>
-<div id="généralités-4" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Généralités<a href="analyse-en-composantes-principales.html#g%C3%A9n%C3%A9ralit%C3%A9s-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="généralités-1" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Généralités<a href="analyse-en-composantes-principales.html#g%C3%A9n%C3%A9ralit%C3%A9s-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>L’objectif d’une ACP est de décrire, sans a priori, un tableau de données constitué exclusivement de variables quantitatives = simplifier un jeu de données pour en extraire de l’information.</p>
 <p>L’ACP permet de déterminer les espaces latents (de dimension inférieure) sur lesquels la projection du nuage de points initial est la moins déformée possible. Autrement dit, elle cherche l’espace qui conserve le plus d’information, c’est-à-dire de variabilité (ou inertie).</p>
 <p>Le principe est de trouver un premier axe (la première composante principale), issu d’une combinaison linéaire des variables initiales, tel que la variance du nuage projette sur cet axe soit maximale. Le processus est ensuite réitéré dans des directions orthogonales pour déterminer les composantes suivantes.</p>
-<div id="packages-r-factominer" class="section level3 hasAnchor" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Packages R : <code>FactoMineR</code><a href="analyse-en-composantes-principales.html#packages-r-factominer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="packages-r-factominer" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Packages R : <code>FactoMineR</code><a href="analyse-en-composantes-principales.html#packages-r-factominer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pour réaliser une analyse en composantes principales, nous utiliserons le package <code>FactoMineR</code>, développé par François Husson et Julie Josse. Ils proposent une série de vidéos en français très ditactique pour comprendre l’ACP :
 <a href="https://www.youtube.com/watch?v=KrNbyM925wI&amp;list=PLnZgp6epRBbRn3FeMdaQgVsFh9Kl0fjqX">Youtube - François Husson</a></p>
 </div>
-<div id="normalisation-des-individus-pré-requis" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Normalisation des individus : pré-requis<a href="analyse-en-composantes-principales.html#normalisation-des-individus-pr%C3%A9-requis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="normalisation-des-individus-pré-requis" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Normalisation des individus : pré-requis<a href="analyse-en-composantes-principales.html#normalisation-des-individus-pr%C3%A9-requis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La première étape pour étudier les variables et les individus est de <strong>centrer</strong> et <strong>reduire</strong> les données.</p>
 <p>Cela revient à utiliser cette formule :</p>
 <p><span class="math display">\[ X^*_{ij} = \frac{X_{ij}-\hat{\mu}_j}{\hat{\sigma}_j} \]</span></p>
@@ -340,39 +242,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 </div>
 </div>
-<div id="réaliser-la-pca-sur-r." class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Réaliser la PCA sur R.<a href="analyse-en-composantes-principales.html#r%C3%A9aliser-la-pca-sur-r." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="réaliser-la-pca-sur-r." class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Réaliser la PCA sur R.<a href="analyse-en-composantes-principales.html#r%C3%A9aliser-la-pca-sur-r." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Nous réaliserons la PCA sur le jeu de données <code>hepthatlon.csv</code>. Cette exemple propose aussi des lignes de codes pour bien conditionner les données à l’Analyse en Composantes Principales.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Importer les données.</li>
 </ol>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="analyse-en-composantes-principales.html#cb170-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;data/heptathlon_2023.csv&quot;</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">header=</span>T, <span class="at">stringsAsFactors =</span> T, <span class="at">row.names =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="analyse-en-composantes-principales.html#cb21-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;data/heptathlon_2023.csv&quot;</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">header=</span>T, <span class="at">stringsAsFactors =</span> T, <span class="at">row.names =</span> <span class="dv">1</span>)</span></code></pre></div>
 <blockquote>
 <p>Les PC (Composantes Principales) résument l’information de la matrice <span class="math inline">\(X_{ij}\)</span> individus/variables.</p>
 </blockquote>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Regarder le tableau. Que remarque t’on ? Supprimer les deux athlètes qui n’ont pas fini l’hepthatlon.</li>
 </ol>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="analyse-en-composantes-principales.html#cb171-1" tabindex="-1"></a>na_athlete <span class="ot">=</span> <span class="fu">which</span>(<span class="fu">is.na</span>(df<span class="sc">$</span>Points)) <span class="co"># On sélectionne les athlètes ne possèdant pas de points.</span></span>
-<span id="cb171-2"><a href="analyse-en-composantes-principales.html#cb171-2" tabindex="-1"></a>df <span class="ot">=</span> df[<span class="sc">-</span>na_athlete,] <span class="co"># On supprime les athlètes respectant la condition évoquée sur la dernière ligne.</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="analyse-en-composantes-principales.html#cb22-1" tabindex="-1"></a>na_athlete <span class="ot">=</span> <span class="fu">which</span>(<span class="fu">is.na</span>(df<span class="sc">$</span>Points)) <span class="co"># On sélectionne les athlètes ne possèdant pas de points.</span></span>
+<span id="cb22-2"><a href="analyse-en-composantes-principales.html#cb22-2" tabindex="-1"></a>df <span class="ot">=</span> df[<span class="sc">-</span>na_athlete,] <span class="co"># On supprime les athlètes respectant la condition évoquée sur la dernière ligne.</span></span></code></pre></div>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>La PCA se réalise uniquement sur des variables quantitatives caractérisant les individus/observations.</li>
 </ol>
 <p>Ici, sélectionner uniquement les variables de performances (<em>On laisse de côté les variables Pays et Points. Pays est une variable qualitative et Points est une variable quantitative construite par rapport à l’ensemble des variables de performance</em>).</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="analyse-en-composantes-principales.html#cb172-1" tabindex="-1"></a>var.perf <span class="ot">=</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">9</span> <span class="co"># Les variables de performances vont des colonnes 3 à 9.</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="analyse-en-composantes-principales.html#cb23-1" tabindex="-1"></a>var.perf <span class="ot">=</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">9</span> <span class="co"># Les variables de performances vont des colonnes 3 à 9.</span></span></code></pre></div>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>La variable 800m n’est pas une variable quantitative. Il faut d’abord transformer les minutes en secondes et additionner les secondes pour avoir une variable en seconde.</li>
 </ol>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="analyse-en-composantes-principales.html#cb173-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;La première valeur de la variable 800m est conditionnée comme suit :&quot;</span>,df<span class="sc">$</span>X800m[<span class="dv">1</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="analyse-en-composantes-principales.html#cb24-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;La première valeur de la variable 800m est conditionnée comme suit :&quot;</span>,df<span class="sc">$</span>X800m[<span class="dv">1</span>]))</span></code></pre></div>
 <pre><code>## [1] &quot;La première valeur de la variable 800m est conditionnée comme suit : 2m13s62&quot;</code></pre>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="analyse-en-composantes-principales.html#cb175-1" tabindex="-1"></a>df<span class="sc">$</span>X800m <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(<span class="fu">as.numeric</span>(<span class="fu">substr</span>(df<span class="sc">$</span>X800m, <span class="dv">1</span>, <span class="dv">1</span>))<span class="sc">*</span><span class="dv">60</span><span class="sc">+</span><span class="fu">as.numeric</span>(<span class="fu">substr</span>(df<span class="sc">$</span>X800m, <span class="dv">3</span>, <span class="dv">4</span>)),<span class="st">&quot;.&quot;</span>,<span class="fu">substr</span>(df<span class="sc">$</span>X800m, <span class="dv">6</span>, <span class="dv">7</span>))) <span class="co"># On transforme les données de 800m.</span></span>
-<span id="cb175-2"><a href="analyse-en-composantes-principales.html#cb175-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Après notre transformation, la première valeur de la variable 800m est conditionnée comme suit :&quot;</span>, df<span class="sc">$</span>X800m[<span class="dv">1</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="analyse-en-composantes-principales.html#cb26-1" tabindex="-1"></a>df<span class="sc">$</span>X800m <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(<span class="fu">as.numeric</span>(<span class="fu">substr</span>(df<span class="sc">$</span>X800m, <span class="dv">1</span>, <span class="dv">1</span>))<span class="sc">*</span><span class="dv">60</span><span class="sc">+</span><span class="fu">as.numeric</span>(<span class="fu">substr</span>(df<span class="sc">$</span>X800m, <span class="dv">3</span>, <span class="dv">4</span>)),<span class="st">&quot;.&quot;</span>,<span class="fu">substr</span>(df<span class="sc">$</span>X800m, <span class="dv">6</span>, <span class="dv">7</span>))) <span class="co"># On transforme les données de 800m.</span></span>
+<span id="cb26-2"><a href="analyse-en-composantes-principales.html#cb26-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Après notre transformation, la première valeur de la variable 800m est conditionnée comme suit :&quot;</span>, df<span class="sc">$</span>X800m[<span class="dv">1</span>]))</span></code></pre></div>
 <pre><code>## [1] &quot;Après notre transformation, la première valeur de la variable 800m est conditionnée comme suit : 133.62&quot;</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
 <li>Effectuer la normalisation via la fonction <code>scale()</code>. Expliquer le tableau normalisé. Vous pouvez utiliser <code>colMeans</code> pour avoir la moyenne de l’ensemble des variables.</li>
 </ol>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="analyse-en-composantes-principales.html#cb177-1" tabindex="-1"></a>df_quanti <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(df[,var.perf])) <span class="co"># On scale dans un data.frame les variables sélectionnées.</span></span>
-<span id="cb177-2"><a href="analyse-en-composantes-principales.html#cb177-2" tabindex="-1"></a><span class="fu">colMeans</span>(df_quanti) <span class="co"># Vérification : les moyennes sont proches de 0</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="analyse-en-composantes-principales.html#cb28-1" tabindex="-1"></a>df_quanti <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">scale</span>(df[,var.perf])) <span class="co"># On scale dans un data.frame les variables sélectionnées.</span></span>
+<span id="cb28-2"><a href="analyse-en-composantes-principales.html#cb28-2" tabindex="-1"></a><span class="fu">colMeans</span>(df_quanti) <span class="co"># Vérification : les moyennes sont proches de 0</span></span></code></pre></div>
 <pre><code>##         X100m       Hauteur         Poids         X200m      Longueur 
 ##  4.093947e-16  3.148523e-16 -6.164774e-16  1.147953e-15  4.059253e-16 
 ##       Javelot         X800m 
@@ -380,21 +282,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="6" style="list-style-type: lower-alpha">
 <li>Importer la librarie <code>FactoMineR</code> et réaliser la PCA à l’aide de la fonction <code>PCA</code>.</li>
 </ol>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="analyse-en-composantes-principales.html#cb179-1" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
-<span id="cb179-2"><a href="analyse-en-composantes-principales.html#cb179-2" tabindex="-1"></a>res.pca <span class="ot">=</span> <span class="fu">PCA</span>(df_quanti, <span class="at">graph =</span> T, <span class="at">ncp =</span> <span class="dv">8</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-105-1.png" alt="" width="672" /><img src="Applied-statistics_files/figure-html/unnamed-chunk-105-2.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="analyse-en-composantes-principales.html#cb30-1" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
+<span id="cb30-2"><a href="analyse-en-composantes-principales.html#cb30-2" tabindex="-1"></a>res.pca <span class="ot">=</span> <span class="fu">PCA</span>(df_quanti, <span class="at">graph =</span> T, <span class="at">ncp =</span> <span class="dv">8</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-24-1.png" alt="" width="672" /><img src="Applied-statistics_files/figure-html/unnamed-chunk-24-2.png" alt="" width="672" /></p>
 <hr />
 </div>
-<div id="interprétation-de-lacp" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Interprétation de l’ACP<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-de-lacp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="interprétation-de-lacp" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Interprétation de l’ACP<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-de-lacp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Une PCA permet de visualiser l’inertie du nuage de points en fonction des liaisons entre les variables caractérisant les individus. Les variables fortement liées vont orienter les individus selon un même axe.</p>
 <blockquote>
 <p>Autrement dit, la PCA permet d’explorer l’hétérogénéité du jeu de données et de réduire les variables en facteurs (Dimensions ou Composantes Principales ou Principal Component).</p>
 </blockquote>
-<div id="choix-du-nombre-daxes" class="section level3 hasAnchor" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> Choix du nombre d’axes<a href="analyse-en-composantes-principales.html#choix-du-nombre-daxes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="choix-du-nombre-daxes" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Choix du nombre d’axes<a href="analyse-en-composantes-principales.html#choix-du-nombre-daxes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Avant d’analyser les graphiques, il faut déterminer combien de composantes principales conserver pour avoir une visio global de l’information contenue dans le jeu données.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="analyse-en-composantes-principales.html#cb180-1" tabindex="-1"></a>res.pca<span class="sc">$</span>eig</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="analyse-en-composantes-principales.html#cb31-1" tabindex="-1"></a>res.pca<span class="sc">$</span>eig</span></code></pre></div>
 <pre><code>##        eigenvalue percentage of variance cumulative percentage of variance
 ## comp 1  2.0171883              28.816976                          28.81698
 ## comp 2  1.5191683              21.702404                          50.51938
@@ -408,15 +310,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Seuil de variance cumulée : Conserver les axes jusqu’à atteindre un pourcentage d’inertie cible (ex. 60 % ou 70 %).</p></li>
 <li><p>Règle du coude (Scree plot) : Observer le graphique des valeurs propres et repérer le point d’inflexion.</p></li>
 </ol>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="analyse-en-composantes-principales.html#cb182-1" tabindex="-1"></a><span class="fu">plot</span>(res.pca<span class="sc">$</span>eig[, <span class="dv">2</span>], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Nombre d&#39;axes&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;% de variance expliquée&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Scree plot&quot;</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-107-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="analyse-en-composantes-principales.html#cb33-1" tabindex="-1"></a><span class="fu">plot</span>(res.pca<span class="sc">$</span>eig[, <span class="dv">2</span>], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Nombre d&#39;axes&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;% de variance expliquée&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Scree plot&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-26-1.png" alt="" width="672" /></p>
 <p>On remarque ici que les 2 premières composantes expliquent un fort pourcentage de l’inertie du jeu de données, néanmoins on pourrait s’intéresser aussi aux axes 3 et 4 qui possèdent aussi de fortes valeurs d’explication de la variance. Pour rappel, inertie = variance = information.</p>
 </div>
-<div id="cercle-des-corrélations-graphique-des-variables" class="section level3 hasAnchor" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> Cercle des corrélations (graphique des variables)<a href="analyse-en-composantes-principales.html#cercle-des-corr%C3%A9lations-graphique-des-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="cercle-des-corrélations-graphique-des-variables" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Cercle des corrélations (graphique des variables)<a href="analyse-en-composantes-principales.html#cercle-des-corr%C3%A9lations-graphique-des-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le cercle des corrélations permet d’étudier les liaisons entre variables et d’interpréter le sens des axes. Vous avez déjà vu dans le cours une statistique qui permet de lier deux variables quantitatives entre elles : le coefficient de corrélation.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="analyse-en-composantes-principales.html#cb183-1" tabindex="-1"></a><span class="fu">plot</span>(res.pca, <span class="at">choix =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-108-1.png" alt="" width="768" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="analyse-en-composantes-principales.html#cb34-1" tabindex="-1"></a><span class="fu">plot</span>(res.pca, <span class="at">choix =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-27-1.png" alt="" width="768" /></p>
 <p>La première chose que vous pouvez déduire des variables, ce sont leurs liens.</p>
 <ul>
 <li><p>Deux flèches opposées signifient que la correlation est proche de -1.</p></li>
@@ -433,16 +335,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Que pouvons-nous dire sur les groupes de variables ? Le groupement selon les axes peut-il s’expliquer d’un point de vue biomécanique et physiologique ?</p></li>
 </ol>
 </div>
-<div id="qualité-de-représentation-cos2-et-contribution-des-variables" class="section level3 hasAnchor" number="7.3.3">
-<h3><span class="header-section-number">7.3.3</span> Qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et contribution des variables<a href="analyse-en-composantes-principales.html#qualit%C3%A9-de-repr%C3%A9sentation-cos2-et-contribution-des-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="qualité-de-représentation-cos2-et-contribution-des-variables" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et contribution des variables<a href="analyse-en-composantes-principales.html#qualit%C3%A9-de-repr%C3%A9sentation-cos2-et-contribution-des-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pour éviter les fausses interprétations sur le cercle des corrélations, il faut vérifier :</p>
 <ol style="list-style-type: decimal">
 <li><p>La qualité de représentation (<span class="math inline">\(Cos^2\)</span>) : mesure à quel point une variable ou un individu est bien représenté(e) sur un axe donné. Plus le <span class="math inline">\(Cos^2\)</span> est proche de 1, plus la projection est fidèle.</p></li>
 <li><p>La contribution (CTR) : mesure l’impact (en %) d’une variable ou d’un individu dans la construction d’un axe. La somme des contributions des variables pour un axe donné vaut 100 %.</p></li>
 </ol>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="analyse-en-composantes-principales.html#cb184-1" tabindex="-1"></a><span class="co"># --- Pour les variables ---</span></span>
-<span id="cb184-2"><a href="analyse-en-composantes-principales.html#cb184-2" tabindex="-1"></a><span class="co"># Qualité de représentation (Cos2)</span></span>
-<span id="cb184-3"><a href="analyse-en-composantes-principales.html#cb184-3" tabindex="-1"></a>res.pca<span class="sc">$</span>var<span class="sc">$</span>cos2</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="analyse-en-composantes-principales.html#cb35-1" tabindex="-1"></a><span class="co"># --- Pour les variables ---</span></span>
+<span id="cb35-2"><a href="analyse-en-composantes-principales.html#cb35-2" tabindex="-1"></a><span class="co"># Qualité de représentation (Cos2)</span></span>
+<span id="cb35-3"><a href="analyse-en-composantes-principales.html#cb35-3" tabindex="-1"></a>res.pca<span class="sc">$</span>var<span class="sc">$</span>cos2</span></code></pre></div>
 <pre><code>##               Dim.1      Dim.2      Dim.3        Dim.4      Dim.5       Dim.6
 ## X100m    0.37219493 0.02132765 0.23841817 0.0793199804 0.17879502 0.094131898
 ## Hauteur  0.07443999 0.39667069 0.07195269 0.3025239467 0.14173199 0.003821285
@@ -459,8 +361,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Longueur 0.113989037
 ## Javelot  0.035818699
 ## X800m    0.001748791</code></pre>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="analyse-en-composantes-principales.html#cb186-1" tabindex="-1"></a><span class="co"># Contributions (en %)</span></span>
-<span id="cb186-2"><a href="analyse-en-composantes-principales.html#cb186-2" tabindex="-1"></a>res.pca<span class="sc">$</span>var<span class="sc">$</span>contrib</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="analyse-en-composantes-principales.html#cb37-1" tabindex="-1"></a><span class="co"># Contributions (en %)</span></span>
+<span id="cb37-2"><a href="analyse-en-composantes-principales.html#cb37-2" tabindex="-1"></a>res.pca<span class="sc">$</span>var<span class="sc">$</span>contrib</span></code></pre></div>
 <pre><code>##              Dim.1     Dim.2     Dim.3      Dim.4     Dim.5      Dim.6
 ## X100m    18.451174  1.403903 21.736239 10.4561818 26.238512 17.7147226
 ## Hauteur   3.690285 26.111044  6.559823 39.8795533 20.799441  0.7191292
@@ -477,41 +379,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Longueur 28.8301723
 ## Javelot   9.0592859
 ## X800m     0.4423053</code></pre>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="analyse-en-composantes-principales.html#cb188-1" tabindex="-1"></a><span class="co"># --- Visualisation synthétique avec factoextra (optionnel mais très lisible) ---</span></span>
-<span id="cb188-2"><a href="analyse-en-composantes-principales.html#cb188-2" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
-<span id="cb188-3"><a href="analyse-en-composantes-principales.html#cb188-3" tabindex="-1"></a></span>
-<span id="cb188-4"><a href="analyse-en-composantes-principales.html#cb188-4" tabindex="-1"></a><span class="co"># Graphique des contributions des variables sur l&#39;axe 1</span></span>
-<span id="cb188-5"><a href="analyse-en-composantes-principales.html#cb188-5" tabindex="-1"></a><span class="fu">fviz_contrib</span>(res.pca, <span class="at">choice =</span> <span class="st">&quot;var&quot;</span>, <span class="at">axes =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-109-1.png" alt="" width="672" /></p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="analyse-en-composantes-principales.html#cb189-1" tabindex="-1"></a><span class="co"># Graphique du Cos2 des variables sur le plan (1,2)</span></span>
-<span id="cb189-2"><a href="analyse-en-composantes-principales.html#cb189-2" tabindex="-1"></a><span class="fu">fviz_cos2</span>(res.pca, <span class="at">choice =</span> <span class="st">&quot;var&quot;</span>, <span class="at">axes =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-109-2.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="analyse-en-composantes-principales.html#cb39-1" tabindex="-1"></a><span class="co"># --- Visualisation synthétique avec factoextra (optionnel mais très lisible) ---</span></span>
+<span id="cb39-2"><a href="analyse-en-composantes-principales.html#cb39-2" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
+<span id="cb39-3"><a href="analyse-en-composantes-principales.html#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="analyse-en-composantes-principales.html#cb39-4" tabindex="-1"></a><span class="co"># Graphique des contributions des variables sur l&#39;axe 1</span></span>
+<span id="cb39-5"><a href="analyse-en-composantes-principales.html#cb39-5" tabindex="-1"></a><span class="fu">fviz_contrib</span>(res.pca, <span class="at">choice =</span> <span class="st">&quot;var&quot;</span>, <span class="at">axes =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-28-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="analyse-en-composantes-principales.html#cb40-1" tabindex="-1"></a><span class="co"># Graphique du Cos2 des variables sur le plan (1,2)</span></span>
+<span id="cb40-2"><a href="analyse-en-composantes-principales.html#cb40-2" tabindex="-1"></a><span class="fu">fviz_cos2</span>(res.pca, <span class="at">choice =</span> <span class="st">&quot;var&quot;</span>, <span class="at">axes =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-28-2.png" alt="" width="672" /></p>
 <p>Règle d’interprétation :</p>
 <ol style="list-style-type: decimal">
 <li><p>Une variable avec un <span class="math inline">\(Cos^2\)</span> faible sur un plan factoriel se situe près du centre du cercle : elle ne doit pas être interprétée sur ces axes (son information est portée par d’autres axes).</p></li>
 <li><p>Une variable avec une forte contribution sur un axe est un descripteur majeur de cet axe.</p></li>
 </ol>
 </div>
-<div id="interprétation-des-axes" class="section level3 hasAnchor" number="7.3.4">
-<h3><span class="header-section-number">7.3.4</span> Interprétation des axes<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="interprétation-des-axes" class="section level3 hasAnchor" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> Interprétation des axes<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Il faut interpréter les axes en fonction du cercle des corrélations.</p>
 <p>Vous pouvez aussi interpréter les axes en ajoutant des variables qualitatives ou quantitatives supplémentaires directement sur la fonction de la PCA.</p>
 <p>Ces variables supplémentaires ne rentrent pas dans la construction des axes (CP), c’est-à-dire qu’elles sont projetées selon les variables qui construisent les CPs. Elles sont représentées en bleus dans le cercle des corrélations.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="analyse-en-composantes-principales.html#cb190-1" tabindex="-1"></a>points <span class="ot">=</span> df<span class="sc">$</span>Points <span class="co"># On attribut les points des athlètes dans une nouvelle variable.</span></span>
-<span id="cb190-2"><a href="analyse-en-composantes-principales.html#cb190-2" tabindex="-1"></a>df_quanti<span class="sc">$</span>points <span class="ot">=</span> points <span class="co"># On créé une nouvelle colonne à laquelle on attribut la variable points.</span></span>
-<span id="cb190-3"><a href="analyse-en-composantes-principales.html#cb190-3" tabindex="-1"></a></span>
-<span id="cb190-4"><a href="analyse-en-composantes-principales.html#cb190-4" tabindex="-1"></a>res.pca <span class="ot">=</span> <span class="fu">PCA</span>(df_quanti, <span class="at">quanti.sup =</span> <span class="dv">8</span>, <span class="at">graph =</span> F) <span class="co"># La variable supplémentaire est la variable Points qui se situe à la 8ième colonne du tableau. </span></span>
-<span id="cb190-5"><a href="analyse-en-composantes-principales.html#cb190-5" tabindex="-1"></a><span class="fu">plot</span>(res.pca, <span class="at">choix =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-110-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="analyse-en-composantes-principales.html#cb41-1" tabindex="-1"></a>points <span class="ot">=</span> df<span class="sc">$</span>Points <span class="co"># On attribut les points des athlètes dans une nouvelle variable.</span></span>
+<span id="cb41-2"><a href="analyse-en-composantes-principales.html#cb41-2" tabindex="-1"></a>df_quanti<span class="sc">$</span>points <span class="ot">=</span> points <span class="co"># On créé une nouvelle colonne à laquelle on attribut la variable points.</span></span>
+<span id="cb41-3"><a href="analyse-en-composantes-principales.html#cb41-3" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="analyse-en-composantes-principales.html#cb41-4" tabindex="-1"></a>res.pca <span class="ot">=</span> <span class="fu">PCA</span>(df_quanti, <span class="at">quanti.sup =</span> <span class="dv">8</span>, <span class="at">graph =</span> F) <span class="co"># La variable supplémentaire est la variable Points qui se situe à la 8ième colonne du tableau. </span></span>
+<span id="cb41-5"><a href="analyse-en-composantes-principales.html#cb41-5" tabindex="-1"></a><span class="fu">plot</span>(res.pca, <span class="at">choix =</span> <span class="st">&quot;var&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-29-1.png" alt="" width="672" /></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Que peut-on dire de l’Axe 1 (composante principale 1 ou Dimension 1) ?</li>
 </ol>
 </div>
-<div id="graphique-des-individus" class="section level3 hasAnchor" number="7.3.5">
-<h3><span class="header-section-number">7.3.5</span> Graphique des individus<a href="analyse-en-composantes-principales.html#graphique-des-individus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="graphique-des-individus" class="section level3 hasAnchor" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> Graphique des individus<a href="analyse-en-composantes-principales.html#graphique-des-individus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le graphique des individus projette les observations dans le nouveau espace latent.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="analyse-en-composantes-principales.html#cb191-1" tabindex="-1"></a><span class="fu">plot</span>(res.pca, <span class="at">choix =</span> <span class="st">&quot;ind&quot;</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-111-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="analyse-en-composantes-principales.html#cb42-1" tabindex="-1"></a><span class="fu">plot</span>(res.pca, <span class="at">choix =</span> <span class="st">&quot;ind&quot;</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-30-1.png" alt="" width="672" /></p>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>Que dire des trois heptathlètes Conte, Posch et Kalin ?</li>
 </ol>
@@ -519,17 +421,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Exemple d’interprétation : Conte possède des coordonnées positives sur l’axe 2 et négatives sur l’axe 1. Elle s’oppose à Posch et Kalin, qui présentent des profils similaires entre elles.</p>
 </blockquote>
 <p>Pour les individus, nous pouvons également vérifier leur qualité de représentation (<span class="math inline">\(Cos^2\)</span>) et leur contribution (CTR) :</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="analyse-en-composantes-principales.html#cb192-1" tabindex="-1"></a><span class="co"># Visualisation des individus les plus contributifs sur l&#39;axe 1</span></span>
-<span id="cb192-2"><a href="analyse-en-composantes-principales.html#cb192-2" tabindex="-1"></a><span class="fu">fviz_cos2</span>(res.pca, <span class="at">choice =</span> <span class="st">&quot;ind&quot;</span>, <span class="at">axes =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
-<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-112-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="analyse-en-composantes-principales.html#cb43-1" tabindex="-1"></a><span class="co"># Visualisation des individus les plus contributifs sur l&#39;axe 1</span></span>
+<span id="cb43-2"><a href="analyse-en-composantes-principales.html#cb43-2" tabindex="-1"></a><span class="fu">fviz_cos2</span>(res.pca, <span class="at">choice =</span> <span class="st">&quot;ind&quot;</span>, <span class="at">axes =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-31-1.png" alt="" width="672" /></p>
 <hr />
 </div>
 </div>
-<div id="travaux-dirigés-1" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Travaux dirigés<a href="analyse-en-composantes-principales.html#travaux-dirig%C3%A9s-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="travaux-dirigés-1" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Travaux dirigés<a href="analyse-en-composantes-principales.html#travaux-dirig%C3%A9s-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Durée : 3h</p>
-<div id="présentation-du-projet-des-données" class="section level3 hasAnchor" number="7.4.1">
-<h3><span class="header-section-number">7.4.1</span> Présentation du projet &amp; des données<a href="analyse-en-composantes-principales.html#pr%C3%A9sentation-du-projet-des-donn%C3%A9es" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="présentation-du-projet-des-données" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Présentation du projet &amp; des données<a href="analyse-en-composantes-principales.html#pr%C3%A9sentation-du-projet-des-donn%C3%A9es" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ce projet repose sur un jeu de données multi-omiques issu d’une étude pré-clinique menée sur 120 souris réparties en 4 groupes expérimentaux :</p>
 <ul>
 <li><p>CTL (Contrôle) : régime standard.</p></li>
@@ -562,13 +464,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 </div>
 </div>
-<div id="travaux-pratiques-3" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Travaux pratiques<a href="analyse-en-composantes-principales.html#travaux-pratiques-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="travaux-pratiques-1" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Travaux pratiques<a href="analyse-en-composantes-principales.html#travaux-pratiques-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Durée : 3h</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="analyse-en-composantes-principales.html#cb193-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="analyse-en-composantes-principales.html#cb44-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
 <p>Ce TP vise à initier aux différentes phases de l’analyse en composantes principales : préparation des données, mise en oeuvre de l’ACP, réalisation des graphiques, interprétation.</p>
-<div id="préparation-des-données-obligatoire" class="section level3 hasAnchor" number="7.5.1">
-<h3><span class="header-section-number">7.5.1</span> Préparation des données (obligatoire)<a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="préparation-des-données-obligatoire" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Préparation des données (obligatoire)<a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>Implémenter le jeu de données Morpho2.xlsx sur R que vous pouvez télécharger <a href="https://github.com/DCM-UCA/data_cours/blob/main/TPs/morpho2.xlsx"><strong>ICI</strong></a>. Utiliser la library <code>readxl</code> et sa fonction <code>read_excel()</code>.</p></li>
 <li><p>Utiliser la fonction <code>head()</code> pour voir les premières lignes de la table. Quelles sont les variables de la table de données? Combien d’observations/individus ont été inclus ?</p></li>
@@ -576,30 +478,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>A quoi correspond la colonne 1 ?</p></li>
 </ol>
 </div>
-<div id="analyse-en-composantes-principales-obligatoire" class="section level3 hasAnchor" number="7.5.2">
-<h3><span class="header-section-number">7.5.2</span> Analyse en composantes principales (obligatoire)<a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="analyse-en-composantes-principales-obligatoire" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Analyse en composantes principales (obligatoire)<a href="analyse-en-composantes-principales.html#analyse-en-composantes-principales-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Créer un tableau nommé <code>X</code> qui contient uniquement les données morphologiques.</p></li>
 <li><p>Centrer et réduire ce tableau à l’aide de la fonction <code>scale()</code>. Vérifier la moyenne et l’écart-type de vos variables.</p></li>
 <li><p>Réaliser l’analyse en composantes principales avec l’aide de la fonction <code>PCA()</code> de la librairie <code>FactoMineR</code>.</p></li>
 </ol>
 </div>
-<div id="interprétation-des-axes-obligatoire" class="section level3 hasAnchor" number="7.5.3">
-<h3><span class="header-section-number">7.5.3</span> Interprétation des axes (obligatoire)<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="interprétation-des-axes-obligatoire" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Interprétation des axes (obligatoire)<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-axes-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol start="8" style="list-style-type: decimal">
 <li><p>Tracer un diagramme en barres pour montrer la décroissance des valeurs propres. Combien d’inertie est expliquée par les 2 premiers axes ? Combien d’axes doit-on conserver pour expliquer au moins 70% d’inertie ? Combien d’axes proposez-vous de conserver pour la suite de l’analyse ? Pourquoi ?</p></li>
 <li><p>Tracer, pour les axes factoriels conservés, la contribution des variables. Quelles variables expliquent le mieux le premier axe factoriel ? Le second ?</p></li>
 <li><p>Réaliser l’analyse en composantes principales avec l’aide de la fonction <code>PCA()</code>, en ajoutant la variable qualitative sexe en variable supplémentaire, et la variable quantitative IMC en variable supplémentaire.</p></li>
 </ol>
 </div>
-<div id="interprétation-des-individus-obligatoire" class="section level3 hasAnchor" number="7.5.4">
-<h3><span class="header-section-number">7.5.4</span> Interprétation des individus (obligatoire)<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-individus-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="interprétation-des-individus-obligatoire" class="section level3 hasAnchor" number="2.5.4">
+<h3><span class="header-section-number">2.5.4</span> Interprétation des individus (obligatoire)<a href="analyse-en-composantes-principales.html#interpr%C3%A9tation-des-individus-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol start="11" style="list-style-type: decimal">
 <li>D’après l’interprétation des axes, que dire des individus avec des coordonnées positives sur l’axe 1 et négative sur l’axe 2 ?</li>
 </ol>
 </div>
-<div id="validité-de-linterprétation-bonus-version-expert" class="section level3 hasAnchor" number="7.5.5">
-<h3><span class="header-section-number">7.5.5</span> Validité de l’interprétation (bonus, version expert)<a href="analyse-en-composantes-principales.html#validit%C3%A9-de-linterpr%C3%A9tation-bonus-version-expert" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="validité-de-linterprétation-bonus-version-expert" class="section level3 hasAnchor" number="2.5.5">
+<h3><span class="header-section-number">2.5.5</span> Validité de l’interprétation (bonus, version expert)<a href="analyse-en-composantes-principales.html#validit%C3%A9-de-linterpr%C3%A9tation-bonus-version-expert" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol start="12" style="list-style-type: decimal">
 <li>Maintenant la question est de savoir si notre modélisation est robuste. Soit nous souhaitons répondre à la question : dans quel mesure peut-on avoir confiance en nos résultats ? Que souhaiterions-nous pour avoir une preuve concernant la véracité de nos conclusions ? Comment construire le test statistique répondant à cette question ?</li>
 </ol>
