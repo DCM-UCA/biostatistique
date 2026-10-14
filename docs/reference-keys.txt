@@ -32,4 +32,4 @@ préparation-des-données-obligatoire
 analyse-en-composantes-principales-obligatoire
 interprétation-des-axes-obligatoire
 interprétation-des-individus-obligatoire
-validité-de-linterprétation-bonus-version-expert
+validité-de-linterprétation-bonus
