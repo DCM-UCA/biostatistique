@@ -25,6 +25,7 @@ cercle-des-corrélations-graphique-des-variables
 qualité-de-représentation-cos2-et-contribution-des-variables
 interprétation-des-axes
 graphique-des-individus
+exercice
 travaux-dirigés-1
 présentation-du-projet-des-données
 travaux-pratiques-1
