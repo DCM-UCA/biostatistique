@@ -23,7 +23,7 @@
 <meta name="author" content="David Martin Carminati" />
 
 
-<meta name="date" content="2026-11-03" />
+<meta name="date" content="2026-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -608,19 +608,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Des analyses biochimiques à partir d’échantillons sériques ont été réalisées : 8 métabolites ont été quantifitées.</p>
 <p>L’objectif initial de ce projet était d’évaluer et prédire l’accumulation de lipides hépatiques (variable réponse, <span class="math inline">\(Y\)</span>) à partir des variables biochimiques (variables explicatives, <span class="math inline">\(X\)</span>).</p>
 <p>Les données sont stockées et téléchargeables <a href="https://github.com/DCM-UCA/data_cours/tree/main/TDs/data-PCA.rda"><strong>ICI</strong></a>. Utiliser la fonction <code>load</code>.</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="analyse-en-composantes-principales.html#cb212-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/TD/data_TD.rda&quot;</span>) <span class="co"># importer les données. Attention au nom du jeu de données.</span></span></code></pre></div>
 <p><strong>1) Regarder le jeu de données et décrire les variables ?</strong></p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="analyse-en-composantes-principales.html#cb213-1" tabindex="-1"></a><span class="fu">head</span>(X) <span class="co"># permet d&#39;afficher uniquement les 6 premières lignes du tableau.</span></span></code></pre></div>
+<pre><code>##        PAL     ALAT Cholesterol Triglyceride      ASAT serum.Iron   tf.sat
+## 1       NA       NA          NA           NA        NA         NA       NA
+## 2 49.10771 35.74172    2.954961    0.9434294 121.59686   21.23939 35.78796
+## 3 46.55019 23.50285    2.964643    1.1956434  66.31913   24.24407 48.00901
+## 4 60.21616 21.19615    2.780396    0.7512293  48.71143   22.67128 38.80239
+## 5 37.33663 12.30729    1.711613    0.8113450  72.83073   20.33662 50.41960
+## 6 51.29827 38.23846    2.808084    1.0556274 102.86783   16.70619 39.01296
+##    AST.ALT         Y High.fat Iron_dextran
+## 1       NA 17.609741      NON          NON
+## 2 2.962815 18.847451      NON          NON
+## 3 2.742468 20.605845      NON          NON
+## 4 1.093897 25.771259      NON          NON
+## 5 9.719359  2.722914      NON          NON
+## 6 2.975637 15.358821      NON          NON</code></pre>
 <p><em>a. Quelle est la dimension de la matrice ?</em></p>
 <p><em>b. Les variables sont t’elles toutes bien conditionnées ? Supprimer les NAs.</em></p>
 <p><em>c. Interpréter le tableau concernant les groupes expérimentaux</em></p>
 <p><em>d. Décrire la nature des variables. Utiliser la fonction <code>class()</code></em></p>
 <p><em>e. A partir de quelles données construire la PCA ?</em></p>
 <p><strong>2) Quels sont les étapes à réaliser pour analyser les résultats d’une analyse en Composantes Principales ?</strong></p>
+<p>Les étapes de pré-processing inclut la gestion des données manquantes ainsi que la normalisation.</p>
 <p><strong>3) Combien d’axes devons-nous interpréter ?</strong></p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="analyse-en-composantes-principales.html#cb215-1" tabindex="-1"></a>w <span class="ot">=</span> <span class="fu">which</span>(<span class="fu">is.na</span>(<span class="fu">rowSums</span>(X[,<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>]))) <span class="co"># permet de sélectionner les individus qui présentent au moins un NA.</span></span>
+<span id="cb215-2"><a href="analyse-en-composantes-principales.html#cb215-2" tabindex="-1"></a></span>
+<span id="cb215-3"><a href="analyse-en-composantes-principales.html#cb215-3" tabindex="-1"></a>res.pca <span class="ot">=</span> FactoMineR<span class="sc">::</span><span class="fu">PCA</span>(X[<span class="sc">-</span>w,<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>], <span class="at">ncp =</span> <span class="dv">8</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-125-1.png" alt="" width="672" /><img src="Applied-statistics_files/figure-html/unnamed-chunk-125-2.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="analyse-en-composantes-principales.html#cb216-1" tabindex="-1"></a>res.pca<span class="sc">$</span>eig <span class="co"># cette ligne permet d&#39;afficher à partir de l&#39;objet res.pca la proportion d&#39;information expliquée par CPs.</span></span></code></pre></div>
+<pre><code>##        eigenvalue percentage of variance cumulative percentage of variance
+## comp 1 2.62885592             32.8606990                          32.86070
+## comp 2 1.98681560             24.8351950                          57.69589
+## comp 3 1.41621868             17.7027335                          75.39863
+## comp 4 1.09973242             13.7466552                          89.14528
+## comp 5 0.47742140              5.9677675                          95.11305
+## comp 6 0.24177425              3.0221781                          98.13523
+## comp 7 0.10938474              1.3673093                          99.50254
+## comp 8 0.03979699              0.4974623                         100.00000</code></pre>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="analyse-en-composantes-principales.html#cb218-1" tabindex="-1"></a><span class="fu">plot</span>(res.pca<span class="sc">$</span>eig[,<span class="dv">2</span>], <span class="at">type =</span> <span class="st">&quot;b&quot;</span>) <span class="co"># On peut visualiser la proportion d&#39;information expliqué par composante </span></span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-126-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="analyse-en-composantes-principales.html#cb219-1" tabindex="-1"></a><span class="co"># pour appliquer la règle du coude.</span></span></code></pre></div>
 <p><strong>4) Interpréter les axes.</strong></p>
 <p><em>a. A partir des variables ? Quelles sont les groupes de variables ?</em></p>
 <p><em>b. Pourrait-on projetter des variables supplémentaires ? Lesquelles ?</em></p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="analyse-en-composantes-principales.html#cb220-1" tabindex="-1"></a>res.pca.update <span class="ot">=</span> FactoMineR<span class="sc">::</span><span class="fu">PCA</span>(X[<span class="sc">-</span>w,], <span class="at">quanti.sup =</span> <span class="dv">9</span>, <span class="at">quali.sup =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">11</span>, <span class="at">ncp =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-127-1.png" alt="" width="672" /><img src="Applied-statistics_files/figure-html/unnamed-chunk-127-2.png" alt="" width="672" /></p>
 <p><strong>5) Interpréter le graphique des individus en fonction des axes.</strong></p>
 <p><em>a. Construire le graphique en fonction des groupes.</em></p>
+<p>La section de code qui suit permet de refaire le graphique des individus en ajoutant des couleurs pour la variable RÉGIME et de changer la forme des points en fonction de la variable IRON.</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="analyse-en-composantes-principales.html#cb221-1" tabindex="-1"></a>col.high.fat <span class="ot">=</span> <span class="fu">as.character</span>(<span class="fu">factor</span>(X<span class="sc">$</span>High.fat[<span class="sc">-</span>w], <span class="fu">levels</span>(X<span class="sc">$</span>High.fat[<span class="sc">-</span>w]), <span class="fu">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;cornflowerblue&quot;</span>))) <span class="co"># définir la couleur</span></span>
+<span id="cb221-2"><a href="analyse-en-composantes-principales.html#cb221-2" tabindex="-1"></a>pch.iron.dextran <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">as.character</span>(<span class="fu">factor</span>(X<span class="sc">$</span>Iron_dextran[<span class="sc">-</span>w], <span class="fu">levels</span>(X<span class="sc">$</span>Iron_dextran[<span class="sc">-</span>w]), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)))) <span class="co"># définir la forme</span></span>
+<span id="cb221-3"><a href="analyse-en-composantes-principales.html#cb221-3" tabindex="-1"></a></span>
+<span id="cb221-4"><a href="analyse-en-composantes-principales.html#cb221-4" tabindex="-1"></a><span class="fu">plot</span>(res.pca.update<span class="sc">$</span>ind<span class="sc">$</span>coord[, <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)], </span>
+<span id="cb221-5"><a href="analyse-en-composantes-principales.html#cb221-5" tabindex="-1"></a>     <span class="at">col =</span> col.high.fat, </span>
+<span id="cb221-6"><a href="analyse-en-composantes-principales.html#cb221-6" tabindex="-1"></a>     <span class="at">pch =</span> pch.iron.dextran)</span>
+<span id="cb221-7"><a href="analyse-en-composantes-principales.html#cb221-7" tabindex="-1"></a></span>
+<span id="cb221-8"><a href="analyse-en-composantes-principales.html#cb221-8" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;+&quot;</span>), <span class="at">title =</span> <span class="st">&quot;High Fat diet&quot;</span>,</span>
+<span id="cb221-9"><a href="analyse-en-composantes-principales.html#cb221-9" tabindex="-1"></a>       <span class="at">fill =</span> <span class="fu">c</span>(<span class="st">&quot;lightblue&quot;</span>, <span class="st">&quot;cornflowerblue&quot;</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span>
+<span id="cb221-10"><a href="analyse-en-composantes-principales.html#cb221-10" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;-&quot;</span>, <span class="st">&quot;+&quot;</span>), <span class="at">title =</span> <span class="st">&quot;Iron dextran&quot;</span>,</span>
+<span id="cb221-11"><a href="analyse-en-composantes-principales.html#cb221-11" tabindex="-1"></a>       <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">bty =</span> <span class="st">&quot;n&quot;</span>)</span>
+<span id="cb221-12"><a href="analyse-en-composantes-principales.html#cb221-12" tabindex="-1"></a></span>
+<span id="cb221-13"><a href="analyse-en-composantes-principales.html#cb221-13" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&#39;grey&#39;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb221-14"><a href="analyse-en-composantes-principales.html#cb221-14" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&#39;grey&#39;</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="Applied-statistics_files/figure-html/unnamed-chunk-128-1.png" alt="" width="576" style="display: block; margin: auto;" /></p>
 <p><em>b. Interpretez.</em></p>
 <p><em>c. Est-ce que les coordonnées des individus sont différents statistiquement ?</em></p>
 <p><em>d. Quelle visualisation graphique pourriez vous réaliser ?</em></p>
@@ -633,7 +685,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="travaux-pratiques-3" class="section level2 hasAnchor" number="7.6">
 <h2><span class="header-section-number">7.6</span> Travaux pratiques<a href="analyse-en-composantes-principales.html#travaux-pratiques-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Durée : 3h</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="analyse-en-composantes-principales.html#cb212-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="analyse-en-composantes-principales.html#cb222-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code></pre></div>
 <p>Ce TP vise à initier aux différentes phases de l’analyse en composantes principales : préparation des données, mise en oeuvre de l’ACP, réalisation des graphiques, interprétation.</p>
 <div id="préparation-des-données-obligatoire" class="section level3 hasAnchor" number="7.6.1">
 <h3><span class="header-section-number">7.6.1</span> Préparation des données (obligatoire)<a href="analyse-en-composantes-principales.html#pr%C3%A9paration-des-donn%C3%A9es-obligatoire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
